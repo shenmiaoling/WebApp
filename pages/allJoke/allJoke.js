@@ -10,7 +10,11 @@ Page({
   onLoad:function(options){
     this.getList(1);
   },
-
+  bindClick: function() {
+    wx.navigateTo({
+      url: '../test/test'
+    })
+  },
   onPullDownRefresh: function(){
     wx.showToast({
       title: '加载中',

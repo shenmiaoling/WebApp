@@ -1,8 +1,10 @@
 {
   "pages":[
+    
     "pages/allJoke/allJoke",
     "pages/index/index",
     "pages/user/user",
+    "pages/test/test",
     "pages/logs/logs"
   ],
   "window":{

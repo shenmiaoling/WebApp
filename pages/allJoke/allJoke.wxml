@@ -2,7 +2,7 @@
 <view>
   <view>
     <scroll-view class="scroll" scroll-top="{{scrollTop}}" style="height:580px;" scroll-y="true" bindscroll="scrll"   bindscrolltolower="loadMore">
-      <view class="block" wx:for="{{listLi}}" wx:for-item="item" wx:key="unique">
+      <view bindtap="bindClick" class="block" wx:for="{{listLi}}" wx:for-item="item" wx:key="unique">
         <text>{{item.text}}</text>
       </view>    
     </scroll-view>
