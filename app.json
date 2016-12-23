@@ -1,40 +1,53 @@
 {
   "pages":[
-    
-    "pages/allJoke/allJoke",
     "pages/index/index",
     "pages/user/user",
-    "pages/test/test",
+    "pages/flop/flop",
+    "pages/post/post",
+    "pages/news/news",
     "pages/logs/logs"
   ],
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "Memow",
+    "navigationBarTitleText": "头牌",
     "navigationBarTextStyle":"black"
   },
   "tabBar": {
     "backgroundColor": "#fbfbfb",
     "borderStyle": "white",
-    "selectedColor":"#50e3c2",
+    "selectedColor":"#d81e06",
     "color": "#aaa",
     "list": [
     {
-      "text": "列表",
-      "pagePath": "pages/allJoke/allJoke",
-      "iconPath": "images/joke.png",
-      "selectedIconPath": "images/jokes.png"
-    },
-      {
       "pagePath": "pages/index/index",
       "text": "首页",
-      "iconPath": "images/wxb主页.png",
-      "selectedIconPath": "images/wxb主页 1.png"
-    },{
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home (1).png"
+    },
+    {
+      "text": "翻牌",
+      "pagePath": "pages/flop/flop",
+      "iconPath": "images/tv.png",
+      "selectedIconPath": "images/tv (1).png"
+    },
+    {
+      "pagePath": "pages/post/post",
+      "text": "发布",
+      "iconPath": "images/camera (1).png",
+      "selectedIconPath": "images/camera (2).png"
+    },
+    {
+      "pagePath": "pages/news/news",
+      "text": "消息",
+      "iconPath": "images/News.png",
+      "selectedIconPath": "images/News (1).png"
+    },
+    {
       "pagePath": "pages/user/user",
-      "text": "女王",
-      "iconPath": "images/wxb标王.png",
-      "selectedIconPath": "images/wxb标王1.png"
+      "text": "我的",
+      "iconPath": "images/user.png",
+      "selectedIconPath": "images/user (1).png"
     }]
   },
     "networkTimeout": {
