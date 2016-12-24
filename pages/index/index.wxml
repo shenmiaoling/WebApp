@@ -7,12 +7,23 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>-->
-  <view class="label">
-    <span>影视</span>
-    <span>音乐</span>
-    <span>动漫</span>
-    <span>萌宠</span>
-    <span>体育</span>
-    <span>更多</span>
+  <view class="menu">
+    <scroll-view scroll-x="true" class="top-nav">
+      <view class="top_btn">热门</view>
+      <view class="top_btn">逗比</view>
+      <view class="top_btn">猎奇</view>
+      <view class="top_btn">娱乐</view>
+      <view class="top_btn">网红</view>
+      <view class="top_btn">社会</view>
+      <view class="top_btn">女神</view>
+      <view class="top_btn">影视</view>
+      <view class="top_btn">音乐</view>
+      <view class="top_btn">动漫</view>
+      <view class="top_btn">萌宠</view>
+      <view class="top_btn">体育</view>
+    </scroll-view>
+    <view>
+      <image src="/images/icon_pull up.png" class="pull_up"></image>
+    </view>
   </view>
 </view>

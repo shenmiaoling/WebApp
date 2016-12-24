@@ -4,7 +4,8 @@ var app = getApp()
 Page({
   data: {
     motto: 'Hello World',
-    userInfo: {}
+    userInfo: {},
+    toView: 'red'
   },
   //事件处理函数
   bindViewTap: function() {
