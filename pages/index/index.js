@@ -3,15 +3,20 @@
 var app = getApp()
 Page({
   data: {
-    motto: 'Hello World',
-    userInfo: {},
-    toView: 'red'
+    pull:false
   },
   //事件处理函数
   bindViewTap: function() {
     wx.navigateTo({
       url: '../logs/logs'
     })
+  },
+  pullLabel: function() {
+    console.log("hh")
+    this.setData({
+      pull: !this.data.pull
+    })
+    console.log(this.data.pull)
   },
   onLoad: function () {
     console.log('onLoad')

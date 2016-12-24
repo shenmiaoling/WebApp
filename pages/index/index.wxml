@@ -22,8 +22,26 @@
       <view class="top_btn">萌宠</view>
       <view class="top_btn">体育</view>
     </scroll-view>
-    <view>
-      <image src="/images/icon_pull up.png" class="pull_up"></image>
+    <view class="pull-container">
+      <image src="/images/pull_up.png" class="pull_up" bindtap="pullLabel" hidden="{{pull ? true : false}}"></image>
+      <image src="/images/pull_down.png" class="pull_up" bindtap="pullLabel" hidden="{{pull ? false : true}}"></image>
     </view>
+    <view class="pull-block" hidden="{{pull ? false : true}}">
+      <view class="pull-btn">热门</view>
+      <view class="pull-btn">逗比</view>
+      <view class="pull-btn">猎奇</view>
+      <view class="pull-btn">娱乐</view>
+      <view class="pull-btn">网红</view>
+      <view class="pull-btn">社会</view>
+      <view class="pull-btn">女神</view>
+      <view class="pull-btn">影视</view>
+      <view class="pull-btn">音乐</view>
+      <view class="pull-btn">动漫</view>
+      <view class="pull-btn">萌宠</view>
+      <view class="pull-btn">体育</view>
+    </view>
+  </view>
+  <view class="section">
+    <input type="text" class="search" placeholder="大家都在搜："/>
   </view>
 </view>
