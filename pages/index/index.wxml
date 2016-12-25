@@ -8,11 +8,11 @@
     <text class="user-motto">{{motto}}</text>
   </view>-->
   <view class="label">
-    <span>影视</span>
-    <span>音乐</span>
-    <span>动漫</span>
-    <span>萌宠</span>
-    <span>体育</span>
-    <span>更多</span>
+    <span>热门</span>
+    <span>逗比</span>
+    <span>猎奇</span>
+    <span>娱乐</span>
+    <span>网红</span>
+    <span>社会</span>
   </view>
 </view>
