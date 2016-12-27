@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  width:92%;
+  width:100%;
   background: #fff;
   border-top: #eee solid 1px;
   border-bottom: #eee solid 1px;
@@ -20,7 +20,7 @@
 .top-nav{
   white-space: nowrap;
   display: flex;
-  margin-right: 120rpx;
+  width: 92%;
 }
 .top_btn{
   display: inline-block;

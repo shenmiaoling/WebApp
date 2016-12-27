@@ -4,6 +4,11 @@ Page({
   data:{
     userInfo: {}
   },
+  handleEdit: function () {
+    wx.navigateTo({
+      url: '../editUser/editUser'
+    })
+  },
   onLoad: function () {
     console.log('onLoad')
     var that = this

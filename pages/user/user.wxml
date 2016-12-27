@@ -1,6 +1,6 @@
 <view class="container">
   <view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
+    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover" bindtap="handleEdit"></image>
     <text class="userinfo-nickname">{{userInfo.nickName}}</text>
   </view>
   <view class="Row">
@@ -17,4 +17,31 @@
 <view class="content-list">
   <image src="/images/collect.png" class="content-ico"></image>
   <text class="content-text">我的订阅</text>
+  <a class="go"></a>
 </view>
+<view class="content-list">
+  <image src="/images/hearta.png" class="content-ico"></image>
+  <text class="content-text">我喜欢的</text>
+  <a class="go"></a>
+</view>
+<view class="content-list">
+  <image src="/images/eye.png" class="content-ico"></image>
+  <text class="content-text">播放历史</text>
+  <a class="go"></a>
+</view>
+<view class="content-list">
+  <image src="/images/star.png" class="content-ico"></image>
+  <text class="content-text">兴趣选择</text>
+  <a class="go"></a>
+</view>
+<view class="content-list">
+  <image src="/images/pen.png" class="content-ico"></image>
+  <text class="content-text">反馈</text>
+  <a class="go"></a>
+</view>
+<view class="content-list">
+  <image src="/images/phone.png" class="content-ico"></image>
+  <text class="content-text">版本选择</text>
+  <a class="go"></a>
+</view>
+

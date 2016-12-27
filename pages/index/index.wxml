@@ -52,7 +52,7 @@
         <image src="/images/eye.png" class="eye"></image>
         <span class="watch-count">1200</span>
         <view class="right">
-          <image src="/images/heart (1).png" class="heart" bindtap="clickFavorite" hidden="{{like? true : false}}"></image>
+          <image src="/images/hearta.png" class="heart" bindtap="clickFavorite" hidden="{{like? true : false}}"></image>
           <image src="/images/heart.png" class="heart" bindtap="clickFavorite" hidden="{{like? false : true}}"></image>
           <span class="like-count">668</span>
           <image src="/images/conment.png" class="conment"></image>

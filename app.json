@@ -1,10 +1,12 @@
 {
   "pages":[
+    "pages/editUser/editUser",
     "pages/user/user",
+    
+    "pages/news/news",
     "pages/index/index",
     "pages/flop/flop",
     "pages/post/post",
-    "pages/news/news",
     "pages/logs/logs"
   ],
   "window":{
