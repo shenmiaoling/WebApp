@@ -11,7 +11,7 @@
   top: 0;
   left: 0;
   z-index: 10;
-  width:92%;
+  width:100%;
   background: #fff;
   border-top: #eee solid 1px;
   border-bottom: #eee solid 1px;
@@ -20,7 +20,7 @@
 .top-nav{
   white-space: nowrap;
   display: flex;
-  margin-right: 120rpx;
+  width: 92%;
 }
 .top_btn{
   display: inline-block;
@@ -58,6 +58,7 @@
 }
 .search {
   margin-top: 100rpx;
+  margin-bottom: 34rpx;
   width: 100%;
   border: gray solid 1px;
   border-radius: 50rpx;
@@ -68,4 +69,51 @@
   background-repeat: no-repeat;
   background-origin: content-box;
   background-position: -12%;
+}
+.tc {
+  text-align: center;
+}
+.video-title {
+  font-size: 32rpx;
+  display: block;
+  margin:0 auto;
+  padding: 20px 0;
+}
+.eye {
+  width: 25px;
+  height: 25px;
+  float: left;
+  margin-left: 20px;
+}
+.heart {
+  width: 25px;
+  height: 25px;
+}
+.conment {
+  width: 25px;
+  height: 25px;
+}
+.share {
+  width: 25px;
+  height: 25px;
+  float: right;
+  margin-right: 10px;
+}
+.watch-count {
+  float: left;
+  font-size: 16px;
+  padding-top: 5px;
+}
+.like-count {
+  font-size: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+.conment-count {
+  margin-right: 10px;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.right {
+  float: right;
 }

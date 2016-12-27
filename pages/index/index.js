@@ -3,7 +3,8 @@
 var app = getApp()
 Page({
   data: {
-    pull:false
+    pull:false,
+    like: false
   },
   //事件处理函数
   bindViewTap: function() {
@@ -17,6 +18,12 @@ Page({
       pull: !this.data.pull
     })
     console.log(this.data.pull)
+  },
+  clickFavorite: function() {
+    this.setData({
+      like: !this.data.like
+    })
+    console.log("click")
   },
   onLoad: function () {
     console.log('onLoad')

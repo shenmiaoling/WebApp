@@ -1,2 +1,3 @@
 <!--pages/news/news.wxml-->
-<text>pages/news/news.wxml</text>
+<view class="news-title">
+消息通知</view>

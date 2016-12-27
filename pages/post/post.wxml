@@ -1,2 +1,5 @@
 <!--pages/post/post.wxml-->
-<text>pages/post/post.wxml</text>
+<view class="container">
+    <video src="{{src}}"></video>
+    <button bindtap="bindButtonTap">获取视频</button>
+</view>

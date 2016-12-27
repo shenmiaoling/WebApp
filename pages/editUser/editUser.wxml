@@ -1,0 +1,27 @@
+<!--pages/editUser/editUser.wxml-->
+<view class="edit-info">
+    <view class="edit-title">
+        编辑个人资料
+    </view>
+    <text class="save">保存</text>
+</view>
+<view class="content-list">
+  <text class="avatar-text">头像</text>
+  <view class="avatar" bindtap="chooseimage">
+    <image class="userinfo-avatar" src="{{avatar}}" background-size="cover"></image>
+    <a class="go"></a>
+    <image src="{{tempFilePaths }}" mode="aspecFill" style="width: 100%; height: 450rpx"/>
+  </view>
+</view>
+<view class="content-list">
+  <text class="avatar-text">昵称</text>
+    <input class="name" value="{{userInfo.nickName}}"/>
+</view>
+<view class="content-list">
+  <text class="avatar-text">性别</text>
+  <input class="name" value="hhhh"/>
+</view>
+<view class="content-list">
+  <text class="avatar-text">签名</text>
+  <input class="name" value="hhhh"/>
+</view>
