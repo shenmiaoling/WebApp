@@ -34,8 +34,8 @@
     {
       "pagePath": "pages/post/post",
       "text": "发布",
-      "iconPath": "images/camera (1).png",
-      "selectedIconPath": "images/camera (2).png"
+      "iconPath": "images/camera.png",
+      "selectedIconPath": "images/camera (1).png"
     },
     {
       "pagePath": "pages/news/news",
