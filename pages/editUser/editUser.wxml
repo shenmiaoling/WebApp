@@ -19,9 +19,10 @@
 </view>
 <view class="content-list">
   <text class="avatar-text">性别</text>
-  <input class="name" value="hhhh"/>
+  <input class="name" wx:if="{{userInfo.gender==1}}" value="男"/>
+  <input class="name" wx:else value="女"/>
 </view>
 <view class="content-list">
   <text class="avatar-text">签名</text>
-  <input class="name" value="hhhh"/>
+  <input class="name" value="头牌不问出处"/>
 </view>

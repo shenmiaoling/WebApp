@@ -1,2 +1,12 @@
+
 <!--pages/flop/flop.wxml-->
-<text>pages/flop/flop.wxml</text>
+<swiper>
+  <block wx:for="{{videoUrls}}" wx:key="6">
+    <swiper-item>
+      <view>
+        <view style="background: pink; height: 150px"></view>
+        <video src="{{item}}" class="slide-image" style="width:100%;height: 100%" controls ></video>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

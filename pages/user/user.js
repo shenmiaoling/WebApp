@@ -1,8 +1,10 @@
 // pages/user/user.js
+var api = require("../../utils/api.js")
 var app = getApp()
 Page({
   data:{
-    userInfo: {}
+    userInfo: {},
+    token: ''
   },
   handleEdit: function () {
     wx.navigateTo({
@@ -10,6 +12,7 @@ Page({
     })
   },
   onLoad: function () {
+    this.getToken()
     console.log('onLoad')
     var that = this
     //调用应用实例的方法获取全局数据
@@ -18,6 +21,23 @@ Page({
       that.setData({
         userInfo:userInfo
       })
+    })
+  },
+  getToken: function () {
+    wx.request({
+      url: api.api+'/user/video/get',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      header: {}, // 设置请求的 header
+      success: function(res){
+        console.log(res)
+      },
+      fail: function() {
+        console.log("fail")
+      },
+      complete: function() {
+        console.log("complete") 
+      }
     })
   },
   onReady:function(){
