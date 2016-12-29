@@ -52,9 +52,11 @@
     display: inline-block;
     }
 .name {
-    padding-left: 10px;
+    color: #9b9b9b;
+    padding-right: 15px;
     display: inline-block;
     position: absolute;
     right: 0;
-    top: 16px
+    top: 16px;
+    text-align: right;
 }

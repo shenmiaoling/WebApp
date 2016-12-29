@@ -1,19 +1,38 @@
 // pages/flop/flop.js
+var api = require("../../utils/api.js")
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    videoUrls:[]
+      // 'http://techslides.com/demos/sample-videos/small.mp4',
+      // 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+      // 'http://techslides.com/demos/sample-videos/small.mp4']
   },
-  onReady:function(){
-    // 页面渲染完成
+  onLoad: function(e) {
+    this.getVideo()
+    console.log(Window)
   },
-  onShow:function(){
-    // 页面显示
-  },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  getVideo: function(e) {
+    var that = this
+    wx.request({
+      url: api.api + '/user/video/get',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        console.log(res)
+        that.setData({
+          videoUrls:res.data.map(function (item) {
+            item.video_url.vid_url = "http://" + item.video_url.vid_url
+             return item.video_url.vid_url
+          })
+        })
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   }
 })
