@@ -5,7 +5,6 @@
     "pages/editUser/editUser",
     "pages/news/news",
     "pages/index/index",
-    
     "pages/post/post",
     "pages/logs/logs"
   ],

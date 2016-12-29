@@ -2,13 +2,13 @@
 var api = require("../../utils/api.js")
 Page({
   data: {
-    videoUrls:[      
-      'http://techslides.com/demos/sample-videos/small.mp4',
-      'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-      'http://techslides.com/demos/sample-videos/small.mp4']
+    videoUrls:[]
+      // 'http://techslides.com/demos/sample-videos/small.mp4',
+      // 'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+      // 'http://techslides.com/demos/sample-videos/small.mp4']
   },
   onLoad: function(e) {
-    // this.getVideo()
+    this.getVideo()
     console.log(Window)
   },
   getVideo: function(e) {

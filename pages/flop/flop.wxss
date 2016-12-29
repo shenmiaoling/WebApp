@@ -6,7 +6,7 @@ page {
 swiper {
     padding-top: 15px;
     padding-bottom: 15px;
-    margin: 20px 15px;
+    margin: 0px 15px;
     box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
 }
 .avatar {
@@ -19,4 +19,18 @@ swiper {
 .video-owner {
     /*padding: 15px 28px 7px 4px;*/
      vertical-align: middle;
+}
+.swiper-bottom {
+    width: 85%;
+    height: 16px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
+}
+.swiper-bottom2 {
+    width: 80%;
+    height: 16px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+    display: block;
+    margin: 0 auto;
 }

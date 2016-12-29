@@ -8,7 +8,8 @@
         <text>舞动人生</text>
       </view>
         <video src="{{item}}" class="slide-image" style="width:100%;height: 50%" controls></video>
-      
     </swiper-item>
   </block>
 </swiper>
+<view class="swiper-bottom"></view>
+<view class="swiper-bottom2"></view>
