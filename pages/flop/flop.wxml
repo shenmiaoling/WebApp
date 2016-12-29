@@ -1,12 +1,14 @@
 
 <!--pages/flop/flop.wxml-->
-<swiper>
-  <block wx:for="{{videoUrls}}" wx:key="6">
+<swiper style="height:100%">
+  <block wx:for="{{videoUrls}}" wx:key="{{index}}">
     <swiper-item>
-      <view>
-        <view style="background: pink; height: 150px"></view>
-        <video src="{{item}}" class="slide-image" style="width:100%;height: 100%" controls ></video>
+      <view class="video-owner">
+        <image src="/images/avatar.jpg" class="avatar"></image>
+        <text>舞动人生</text>
       </view>
+        <video src="{{item}}" class="slide-image" style="width:100%;height: 50%" controls></video>
+      
     </swiper-item>
   </block>
 </swiper>

@@ -1,1 +1,22 @@
 /* pages/flop/flop.wxss */
+
+page {
+  height: 80%;
+}
+swiper {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin: 20px 15px;
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.2);
+}
+.avatar {
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    margin-left: 4px;
+    margin-right: 12px;
+}
+.video-owner {
+    /*padding: 15px 28px 7px 4px;*/
+     vertical-align: middle;
+}

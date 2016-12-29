@@ -9,6 +9,7 @@ Page({
   },
   onLoad: function(e) {
     // this.getVideo()
+    console.log(Window)
   },
   getVideo: function(e) {
     var that = this
