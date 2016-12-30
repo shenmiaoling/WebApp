@@ -1,0 +1,8 @@
+<!--pages/releaseVideo/releaseVideo.wxml-->
+<template name='A'>
+    <text>A template</text>
+</template>
+<import src="../index/index.wxml"/>
+<template is="B"/>
+<template is="A"/>
+

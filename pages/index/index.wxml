@@ -1,12 +1,9 @@
+
 <!--index.wxml-->
 <view class="container">
-  <!--<view  bindtap="bindViewTap" class="userinfo">
-    <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-    <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>-->
+  <template name="B">
+    <text> B template </text>
+  </template>
   <view class="menu">
     <scroll-view scroll-x="true" class="top-nav">
       <view class="top_btn">热门</view>
@@ -41,24 +38,29 @@
       <view class="pull-btn">体育</view>
     </view>
   </view>
-   <view class="section">
-      <input type="text" class="search" placeholder="大家都在搜："/>    </view>
-    <view class="tc">
-      <video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400" controls style="width:100%;height: 50%"></video>
+  <view class="section">
+    <input type="text" class="search" placeholder="大家都在搜：" /> </view>
+  <view class="tc">
+    <view wx:for="{{videoUrls}}" wx:key="{{index}}">
+      <video src="{{item}}" controls style="width:100%;height: 175px"></video>
       <view class="video-title">
-      《Good Boy》原版舞蹈来了，赶紧学起来吧
+        《Good Boy》原版舞蹈来了，赶紧学起来吧
       </view>
-      <view>
+      <view class="video-bottom">
         <image src="/images/eye.png" class="eye"></image>
-        <span class="watch-count">1200</span>
+        <span class="watch-count">1200</span> 
         <view class="right">
           <image src="/images/hearta.png" class="heart" bindtap="clickFavorite" hidden="{{like? true : false}}"></image>
           <image src="/images/heart.png" class="heart" bindtap="clickFavorite" hidden="{{like? false : true}}"></image>
-          <span class="like-count">668</span>
+          <span class="like-count">668</span> 
           <image src="/images/conment.png" class="conment"></image>
-          <span class="conment-count">458</span>
+          <span class="conment-count">458</span> 
           <image src="/images/menu (1).png" class="share"></image>
         </view>
       </view>
+    </view>
+
+    <!--<video id="myVideo" src="http://wxsnsdy.tc.qq.com/105/20210/snsdyvideodownload?filekey=30280201010421301f0201690402534804102ca905ce620b1241b726bc41dcff44e00204012882540400&bizid=1023&hy=SH&fileparam=302c020101042530230204136ffd93020457e3c4ff02024ef202031e8d7f02030f42400204045a320a0201000400"
+    controls style="width:100%;height: 175px"></video>-->
   </view>
 </view>

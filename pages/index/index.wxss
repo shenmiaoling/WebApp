@@ -72,46 +72,51 @@
 }
 .tc {
   text-align: center;
+  width: 100%;
 }
 .video-title {
   font-size: 32rpx;
   display: block;
   margin:0 auto;
-  padding: 20px 0;
+  padding-top: 18px;
+  padding-bottom: 14px;
+}
+.video-bottom {
+  margin-bottom: 35px;
 }
 .eye {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   float: left;
   margin-left: 20px;
 }
 .heart {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
 }
 .conment {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
 }
 .share {
-  width: 25px;
-  height: 25px;
+  width: 18px;
+  height: 18px;
   float: right;
   margin-right: 10px;
 }
 .watch-count {
   float: left;
   font-size: 16px;
-  padding-top: 5px;
+  padding-left: 5px;
 }
 .like-count {
-  font-size: 20px;
+  font-size: 16px;
   margin-right: 10px;
   margin-left: 10px;
 }
 .conment-count {
   margin-right: 10px;
-  font-size: 20px;
+  font-size: 16px;
   margin-left: 10px;
 }
 .right {

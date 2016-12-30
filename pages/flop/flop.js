@@ -11,6 +11,9 @@ Page({
     this.getVideo()
     console.log(Window)
   },
+  changePosition: function (e) {
+    console.log(e.target.offsetLeft)
+  },
   getVideo: function(e) {
     var that = this
     wx.request({

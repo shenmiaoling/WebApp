@@ -1,10 +1,11 @@
 {
   "pages":[
-    "pages/flop/flop",
+    "pages/index/index",
     "pages/user/user",
+    "pages/flop/flop",
+    "pages/releaseVideo/releaseVideo",
     "pages/editUser/editUser",
     "pages/news/news",
-    "pages/index/index",
     "pages/post/post",
     "pages/logs/logs"
   ],
