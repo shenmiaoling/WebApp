@@ -1,71 +1,93 @@
 /* pages/user/user.wxss */
+
 .userinfo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 66px;
-  padding-bottom: 66px;
-  background-color: #646d2b;
+  /*padding-top: 66px;*/
+  /*padding-bottom: 66px;*/
+  /*background-color: #646d2b;*/
   width: 100%;
+  position: relative;
+}
+
+.blur-image {
+  width: 100%;
+  height: 240px;
+  -webkit-filter: blur(10px); /* Chrome, Opera */
+  -moz-filter: blur(10px);
+  -ms-filter: blur(10px);
+  filter: blur(10px);
 }
 
 .userinfo-avatar {
+  position: absolute;
+  top: 66px;
   width: 74px;
   height: 74px;
-  margin: 20rpx;
   border-radius: 50%;
 }
 
 .userinfo-nickname {
   color: #fff;
   font-size: 16px;
+  position: absolute;
+  top: 156px;
 }
 
 .usermotto {
   margin-top: 200px;
 }
+
 .Row {
-    text-align: center;
-    display: table;
-    width: 100%;
-    table-layout:fixed;
-    border-spacing: 10px;
+  text-align: center;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
 }
+
 .Column {
-    display: table-cell;
+  display: table-cell;
 }
+
 .text {
-    font-size: 18px;
-    color: #9b9b9b;
+  font-size: 18px;
+  color: #9b9b9b;
 }
+
 .Row-text {
-    text-align: center;
-    display: table;
-    width: 100%;
-    table-layout:fixed;
-    padding-bottom: 16px;
+  text-align: center;
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  padding-bottom: 16px;
 }
+
 .content-list {
   font-size: 16px;
   border-bottom: 1px solid #c5c5c5;
   padding: 20px;
 }
+
 .content-ico {
   width: 19px;
   height: 20px;
   float: left;
 }
+
 .content-text {
   padding-left: 32px;
 }
+
 .go {
-  display:block;
+  display: block;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAnCAYAAAAVW4iAAAAAAXNSR0IArs4c6QAAA0tJREFUSA21l11oklEYx/2aiVCjiKQupJvoopsFXqwiBkFtMSSKsIs2cOmIgoq1Ivqg7gqquygq3SZujJC+KMbGiKBiu+mmiC6iou6iu5JIMaf9HvF9OR516nQHXs7z/D3P/3+e863FopSxsbFOxW2JaTNYIpHI9Ww2OxeNRo8bWCvqgsDIyMhZyOSz5fP524hcbgW5cFgZlo0LCwufIHZqpLfC4fApq9Wa1/CGXKu0psc9CDzCdKvRkE92dHQEfT7fPxVvxC4ISADDtC2Xy01hrlYJEJn2eDwH/X7/XxWv1zYFJCAWi21homfJZoNGMO9wOHoHBgZ+aXhN11xF0jIYDH602+076PVnLXI7wq/Hx8fXa3hNtyQDo3U8Hl+XyWRmyGSrgRXrb21tbbvpyFcNr+pWFJDWExMTq1Kp1DPMLjWa7H7ydYdCofcqXs0uGSK1UV9fX5Jx74FMRMxCVh4WwyuW904TXMSomoERk0gk7MlkMgpx0MCKdQrxQ+yV5xpe4tYUkNaQW0dHR2/Q8+GSaIsla7PZGK1QXMNNt+oQmS0w6GkekjOY51Uc24F4jI06pOGmW1cGZmsMyMJUdyG2qzj21cHBwYsaZmlYQAg4eQ9QTfKtEF8p95mTY2ScM7AlCUgwc7KLOXlKJisNsmL9sL29/XAgEMiIv2QBCeb88iEyjblWfKW8QGQ/In+aEhBCRDYjMovpVQTEfOt0Ovc2LSBMxZN4XmytPGlaYFkzqGcO6tpoWtoFV1YRK+gljj7Bsop6ZYKl4ZKGqJF90HAGspPZSAk6V7LJwK6xk4+qm0wyaEgA8nMMS0Q9JiDM851mB18QQr3o54n+e8GH0Or1em9S6+8lOU2PQH6vYiBgzTmodh/Q6zTxgabuA24tF5f9A4j2aT38zW3n55XxRsPL3KoZLHYn8/LogfxdGVsFwFEBs8irIp1Oz/Bb2asCbA/kXyrFVcLKMii+VeXxtUkL+OByubr7+/t/aPiibskylZcdD+G5CuTzbre7q1FyUTYzoOedkE9BvkbtEqul+bcp50o35I8hbv3rujjmy/b/wMaK+M4wXNKG5Qrnyknwpv58CKc5B/IfDX8Y0hPszjuqYMtsmeiWkRWJ/gNa+GEJAMKe6wAAAABJRU5ErkJggg==');
-  background-repeat:no-repeat;
+  background-repeat: no-repeat;
   background-size: 100% 100%;
-  width:17.5px;
-  height:17.5px;
-  float:right;
-  top:0;
-  right:0;  
+  width: 17.5px;
+  height: 17.5px;
+  float: right;
+  top: 0;
+  right: 0;
 }

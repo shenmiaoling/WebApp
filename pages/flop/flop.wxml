@@ -1,6 +1,6 @@
 
 <!--pages/flop/flop.wxml-->
-<swiper style="height:100%">
+<swiper style="height:100%" bindchange="changePosition">
   <block wx:for="{{videoUrls}}" wx:key="{{index}}">
     <swiper-item>
       <view class="video-owner">
