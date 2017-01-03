@@ -1,5 +1,9 @@
 <!--pages/post/post.wxml-->
-<view class="container">
-    <video src="{{src}}"></video>
-    <button bindtap="bindButtonTap">获取视频</button>
+<!--hidden="{{video ? false : true}}"-->
+<view class="container" >
+    <video src="{{src}}" preload="load">
+    </video>
+    <image src="http://wallpaper-gallery.net/images/cute-pictures/cute-pictures-9.jpg"></image>
+    <!--<button bindtap="bindButtonTap">获取视频</button>-->
+
 </view>

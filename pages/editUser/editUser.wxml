@@ -3,7 +3,7 @@
     <view class="edit-title">
         编辑个人资料
     </view>
-    <text class="save">保存</text>
+    <text class="save" bindtap="saveInfo">保存</text>
 </view>
 <view class="content-list">
   <text class="avatar-text">头像</text>
@@ -15,14 +15,19 @@
 </view>
 <view class="content-list">
   <text class="avatar-text">昵称</text>
-    <input class="name" value="{{userInfo.nickName}}"/>
+    <input class="name" value="{{userInfo.nickName}}" bindinput="bindNickname"/>
 </view>
 <view class="content-list">
   <text class="avatar-text">性别</text>
-  <input class="name" wx:if="{{userInfo.gender==1}}" value="男"/>
-  <input class="name" wx:else value="女"/>
+  <picker class="name" bindchange="bindPickerChange" value="{{index}}" range="{{array}}">
+    <view class="picker">
+      {{array[index]}}
+    </view>
+  </picker>
+  <!--<input class="name" wx:if="{{userInfo.gender==1}}" value="男"/>
+  <input class="name" wx:else value="女"/>-->
 </view>
 <view class="content-list">
   <text class="avatar-text">签名</text>
-  <input class="name" value="头牌不问出处"/>
+  <input name="signature" class="name" value="头牌不问出处" bindinput="bindSignature"/>
 </view>
