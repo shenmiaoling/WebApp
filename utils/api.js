@@ -1,4 +1,4 @@
-var api = "http://192.168.1.109:3333"
+var api = "http://copytp.herokuapp.com"
 module.exports = {
     api: api,
 }

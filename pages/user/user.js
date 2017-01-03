@@ -1,7 +1,6 @@
 // pages/user/user.js
 var api = require("../../utils/api.js")
 var app = getApp()
-var API_URL = 'http://192.168.1.109:3333/session'
 function Login(code, encryptedData, iv) {
   console.log('code=' + code + '&encryptedData=' + encryptedData + '&iv=' + iv);
   //创建一个dialog
@@ -41,44 +40,44 @@ Page({
     })
   },
   onLoad: function () {
-    // wx.login({
-    //   success: function (res) {
-    //     if (res.code) {
-    //       var code = res.code;
-    //       wx.getUserInfo({
-    //         success: function (res2) {
-    //           console.log(res2)
-    //           var encryptedData = res2.encryptedData
-    //           var iv = res2.iv
-    //           wx.request({
-    //             url: 'http://192.168.1.109:3333/session',
-    //             data: {
-    //               code: code,
-    //               encryptedData: encryptedData,
-    //               iv: iv
-    //             },
-    //             method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-    //             // header: {}, // 设置请求的 header
-    //             success: function (res) {
-    //               console.log('success'+ res)
-    //               console.log(res)// success
-    //             },
-    //             fail: function (err) {
-    //               console.log( err)// fail
-    //             },
-    //             complete: function () {
-    //               // complete
-    //             }
-    //           })
-    //         }
-    //       })
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res2) {
+              console.log(res2)
+              var encryptedData = res2.encryptedData
+              var iv = res2.iv
+              wx.request({
+                url: api.api + '/session',
+                data: {
+                  code: code,
+                  encryptedData: encryptedData,
+                  iv: iv
+                },
+                method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+                // header: {}, // 设置请求的 header
+                success: function (res) {
+                  console.log('success'+ res)
+                  console.log(res)// success
+                },
+                fail: function (err) {
+                  console.log( err)// fail
+                },
+                complete: function () {
+                  // complete
+                }
+              })
+            }
+          })
 
-    //     }
-    //     else {
-    //       console.log('获取用户登录失败' + res.eres.errMsg)
-    //     }
-    //   }
-    // })
+        }
+        else {
+          console.log('获取用户登录失败' + res.eres.errMsg)
+        }
+      }
+    })
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {

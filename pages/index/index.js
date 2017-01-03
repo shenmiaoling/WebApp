@@ -6,9 +6,11 @@ Page({
   data: {
     pull: false,
     like: false,
-    videoUrls: ['http://techslides.com/demos/sample-videos/small.mp4',
-      'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-      'http://techslides.com/demos/sample-videos/small.mp4']
+    videoUrls: []
+    
+    // ['http://techslides.com/demos/sample-videos/small.mp4',
+    //   'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
+    //   'http://techslides.com/demos/sample-videos/small.mp4']
   },
   //事件处理函数
   bindViewTap: function () {
@@ -31,20 +33,20 @@ Page({
   },
   onLoad: function () {
     var _this = this
-    // wx.request({
-    //   url: api.api + '/user/video/get',
-    //   data: {},
-    //   method: 'GET',
-    //   success: function (res) {
-    //     console.log(res) // success
-    //     _this.setData({
-    //       videoUrls: res.data.map(function (item) {
-    //         item.video_url.vid_url = "http://" + item.video_url.vid_url
-    //         return item.video_url.vid_url
-    //       })
-    //     })
-    //   }
-    // })
+    wx.request({
+      url: api.api + '/video',
+      data: {},
+      method: 'GET',
+      success: function (res) {
+        console.log(res) // success
+        _this.setData({
+          videoUrls: res.data.map(function (item) {
+            item.video_url.vid_url = "http://" + item.video_url.vid_url
+            return item.video_url.vid_url
+          })
+        })
+      }
+    })
     var that = this
     //调用应用实例的方法获取全局数据
     app.getUserInfo(function (userInfo) {
