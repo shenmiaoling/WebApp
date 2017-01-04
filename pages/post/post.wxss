@@ -1,34 +1,54 @@
 /* pages/post/post.wxss */
-.text{
-   font-size: 15px;
-    position: absolute;
-    width: 50%;
-    height: 65px;
-    right: 20px;
-    top: 19px;
-    float: right;
-}
-.post-img{
-    width: 139px;
-    height: 65px;
-    position: absolute;
-    float: left;
-    top: 15px;
-    left: 20px;
+
+.text {
+  font-size: 15px;
+  position: absolute;
+  width: 50%;
+  height: 65px;
+  right: 20px;
+  top: 19px;
+  float: right;
 }
 
-.line{
-    border-bottom: 1px solid lightgray;
-    margin-top:100px;
-    width:100%;
+.post-img {
+  width: 139px;
+  height: 65px;
+  position: absolute;
+  float: left;
+  top: 15px;
+  left: 20px;
 }
-.post-btn{
-    position: absolute;
-    right: 2px;
-    top: 120px;
-    /*background-color: #9b9a9b;*/
-    opacity: 0.28;
-    color: white;
-    font-size: 16px;
+
+.line {
+  border-bottom: 1px solid lightgray;
+  margin-top: 100px;
+  width: 100%;
+}
+
+.post-btn {
+  position: absolute;
+  right: 10px;
+  top: 115px;
+  background-color: rgba(155, 154, 155, 0.28);
+  color: white;
+  font-size: 16px;
+  text-align: center;
+}
+
+.color {
+  background-color: #f14969;
+}
+
+.active-title {
+    margin: 30px 50px 10px 26px;
+    font-size: 19px;
+}
+.label {
+    border: 1px solid lightgray;
+    border-radius: 20px;
+    padding: 5px;
     text-align: center;
+    width: 60%;
+    margin-left: 26px;
+    margin-top: 13px;
 }

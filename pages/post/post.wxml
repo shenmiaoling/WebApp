@@ -1,11 +1,17 @@
-<!--pages/post/post.wxml-->
-<!--hidden="{{video ? false : true}}"-->
-<view class="container" >
-    <!--<video src="{{src}}" preload="load">
-    </video>-->
-    <image class="post-img" src="http://wallpaper-gallery.net/images/cute-pictures/cute-pictures-9.jpg"></image>
-    <textarea bindinput="bindinput" class="text" maxlength="5" placeholder="添加视频描述，让更多人看到你的视频" placeholder-style="color:rgba(0,0,0,0.26);font-size:15px"/>
-<view class="line"></view>
-<button class="post-btn" style="background-color:{{postBtn ? blue : red}}">↑发布</button>
 
+<!--pages/post/post.wxml-->
+
+<!--hidden="{{video ? false : true}}"-->
+<view class="container">
+
+  <!--<video src="{{src}}" preload="load">
+    </video>-->
+  <image class="post-img" src="http://wallpaper-gallery.net/images/cute-pictures/cute-pictures-9.jpg"></image>
+  <textarea bindinput="bindinput" class="text" maxlength="50" placeholder="添加视频描述，让更多人看到你的视频" placeholder-style="color:rgba(0,0,0,0.26);font-size:15px" />
+  <view class="line"></view>
+  <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}">↑ 发布</button>
 </view>
+<view class="active-title">参与活动</view>
+<view class="label" id="label-id" bindtap="getLabel">#今天你菇了么？#</view>
+<view class="label" bindtap="getLabel">#今天你菇了么？#</view>
+<view class="label" bindtap="getLabel">#今天你菇了么？#</view>

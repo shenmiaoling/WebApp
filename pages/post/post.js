@@ -1,11 +1,29 @@
 // pages/post/post.js
+var api = require("../../utils/api.js")
 Page({
   data: {
     video: false,
     postBtn: false,
+    loader:false
   },
   bindButtonTap: function () {
-
+    var token = wx.getStorageInfoSync("token")
+    console.log(token)
+    wx.request({
+      url: api.api + `/user/video/push/:videoId?token=${token}`,
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
   onLoad: function (options) {
     var that = this
@@ -21,10 +39,21 @@ Page({
     //   }
     // })
   },
-  bindinput:function(){
-    this.setData({
-      postBtn:true
-    })
+  bindinput: function (e) {
+    console.log(e.detail.value.length)
+    if (e.detail.value.length !== 0) {
+      this.setData({
+        postBtn: true
+      })
+    }else{
+      this.setData({
+        postBtn: false
+      })
+    }
+
+  },
+  getLabel: function () {
+    console.log("hh")
   },
   onReady: function () {
     // 页面渲染完成
