@@ -1,7 +1,8 @@
 // pages/post/post.js
 Page({
   data: {
-    video: false
+    video: false,
+    postBtn: false,
   },
   bindButtonTap: function () {
 
@@ -19,6 +20,11 @@ Page({
     //     })
     //   }
     // })
+  },
+  bindinput:function(){
+    this.setData({
+      postBtn:true
+    })
   },
   onReady: function () {
     // 页面渲染完成

@@ -4,8 +4,8 @@
     <!--<video src="{{src}}" preload="load">
     </video>-->
     <image class="post-img" src="http://wallpaper-gallery.net/images/cute-pictures/cute-pictures-9.jpg"></image>
-    <textarea class="text" maxlength="5" placeholder="添加视频描述，让更多人看到你的视频" placeholder-style="color:rgba(0,0,0,0.26);font-size:15px"/>
+    <textarea bindinput="bindinput" class="text" maxlength="5" placeholder="添加视频描述，让更多人看到你的视频" placeholder-style="color:rgba(0,0,0,0.26);font-size:15px"/>
 <view class="line"></view>
-<button class="post-btn">↑发布</button>
+<button class="post-btn" style="background-color:{{postBtn ? blue : red}}">↑发布</button>
 
 </view>
