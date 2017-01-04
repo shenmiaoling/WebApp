@@ -1,4 +1,4 @@
-var api = "http://copytp.herokuapp.com"
+var api = " http://tp.newteo.com"
 module.exports = {
     api: api,
 }
