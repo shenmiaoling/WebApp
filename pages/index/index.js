@@ -12,6 +12,12 @@ Page({
     //   'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
     //   'http://techslides.com/demos/sample-videos/small.mp4']
   },
+  // onPullDownRefresh: function(){
+  //   console.log("down")
+  // },
+  onReachBottom: function(){
+    console.log("刷新")
+  },
   //事件处理函数
   bindViewTap: function () {
     wx.navigateTo({
@@ -30,6 +36,64 @@ Page({
       like: !this.data.like
     })
     console.log("click")
+  },
+    onPullDownRefresh: function(){
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading'
+    });
+    this.getList(1,true);
+  },
+    getList: function(page, stopPull){
+    var that = this
+    wx.request({
+      url: 'https://wechat.sparklog.com/jokes',
+      data: {
+        page: page,
+        per: '20'
+      },
+      method: 'GET', 
+      success: function(res){
+        console.log(res)
+        if(page===1){
+          that.setData({
+            page: page+1,
+            listLi: res.data,
+            done: false
+          })
+          if(stopPull){
+            wx.stopPullDownRefresh()           
+          }
+        }else{
+          if(res.data<20){
+            that.setData({
+              page: page+1,
+              listLi: that.data.listLi.concat(res.data),
+              done: true
+            }) 
+          }else{
+            that.setData({
+              page: page+1,
+              listLi: that.data.listLi.concat(res.data)
+            }) 
+          }    
+        }
+      },
+    })
+  },
+    loadMore: function(){
+    var done = this.data.done;
+    if(done){
+      return
+    }else{
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 500
+      });
+      var page = this.data.page;
+      this.getList(page)
+    }
   },
   onLoad: function () {
     var _this = this
