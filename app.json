@@ -1,9 +1,10 @@
 {
   "pages":[
+    "pages/index/index",
     "pages/post/post",
     "pages/user/user",
     "pages/editUser/editUser",
-    "pages/index/index",
+    
     
     "pages/flop/flop",
     "pages/releaseVideo/releaseVideo",

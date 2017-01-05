@@ -6,17 +6,21 @@ Page({
   data: {
     pull: false,
     like: false,
-    videoUrls: []
-    
+    vid: '',
+    listLi: [],
+    token : wx.getStorageInfoSync("token"),
     // ['http://techslides.com/demos/sample-videos/small.mp4',
     //   'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-    //   'http://techslides.com/demos/sample-videos/small.mp4']
+    //   'http://techslides.com/demos/sample-videos/small.mp4'],
+    page: 1,
+    scrollTop: 0,
+    done: false,
+    hidden: true
+    
   },
-  // onPullDownRefresh: function(){
-  //   console.log("down")
-  // },
-  onReachBottom: function(){
-    console.log("刷新")
+  onLoad: function () {
+    this.getList(1)
+    this.getLike()
   },
   //事件处理函数
   bindViewTap: function () {
@@ -31,61 +35,86 @@ Page({
     })
     console.log(this.data.pull)
   },
-  clickFavorite: function () {
-    this.setData({
-      like: !this.data.like
+  clickFavorite: function (event) {
+    var _this = this
+    var vid = event.currentTarget.dataset.id
+    var token = wx.getStorageInfoSync("token")
+    wx.request({
+      url: api.api + `/user/favorite?vid=${vid}&token=${token}`,
+      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function (res) {
+        console.log(res)
+        _this.setData({
+          like: !_this.data.like,
+          vid: vid
+        })
+      }
     })
-    console.log("click")
   },
-    onPullDownRefresh: function(){
+  onPullDownRefresh: function () {
     wx.showToast({
       title: '加载中',
       icon: 'loading'
     });
-    this.getList(1,true);
+    this.getList(1, true);
   },
-    getList: function(page, stopPull){
+  getLike: function(){
+    console.log("success")
+    var token = wx.getStorageInfoSync("token")
+    console.log(this.data.token)
+    wx.request({
+      url: api.api + `/user/favorite/get?&token=${token}`,
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        console.log("success")
+        console.log(res.data)// success
+      },
+    })
+  },
+  getList: function (page, stopPull) {
     var that = this
     wx.request({
-      url: 'https://wechat.sparklog.com/jokes',
+      url: api.api + '/video',
       data: {
         page: page,
-        per: '20'
+        per: '5'
       },
-      method: 'GET', 
-      success: function(res){
+      method: 'GET',
+      success: function (res) {
         console.log(res)
-        if(page===1){
+        if (page === 1) {
           that.setData({
-            page: page+1,
+            page: page + 1,
             listLi: res.data,
             done: false
           })
-          if(stopPull){
-            wx.stopPullDownRefresh()           
+          if (stopPull) {
+            wx.stopPullDownRefresh()
           }
-        }else{
-          if(res.data<20){
+        } else {
+          if (res.data < 5) {
             that.setData({
-              page: page+1,
+              page: page + 1,
               listLi: that.data.listLi.concat(res.data),
               done: true
-            }) 
-          }else{
+            })
+          } else {
             that.setData({
-              page: page+1,
+              page: page + 1,
               listLi: that.data.listLi.concat(res.data)
-            }) 
-          }    
+            })
+          }
         }
       },
     })
   },
-    loadMore: function(){
+  onReachBottom: function () {
     var done = this.data.done;
-    if(done){
+    if (done) {
       return
-    }else{
+    } else {
       wx.showToast({
         title: '加载中',
         icon: 'loading',
@@ -94,30 +123,5 @@ Page({
       var page = this.data.page;
       this.getList(page)
     }
-  },
-  onLoad: function () {
-    var _this = this
-    wx.request({
-      url: api.api + '/video',
-      data: {},
-      method: 'GET',
-      success: function (res) {
-        console.log(res) // success
-        _this.setData({
-          videoUrls: res.data.map(function (item) {
-            item.video_url.vid_url = "http://" + item.video_url.vid_url
-            return item.video_url.vid_url
-          })
-        })
-      }
-    })
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      that.setData({
-        userInfo: userInfo
-      })
-    })
   }
 })

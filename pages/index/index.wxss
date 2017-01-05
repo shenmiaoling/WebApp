@@ -1,50 +1,58 @@
 /**index.wxss**/
-.label{
+
+.label {
   margin: 17rpx 20rpx;
   background-color: pink;
 }
-.label span{
+
+.label span {
   padding-right: 40rpx;
 }
-.menu{
+
+.menu {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 10;
-  width:100%;
+  width: 100%;
   background: #fff;
   border-top: #eee solid 1px;
   border-bottom: #eee solid 1px;
 }
 
-.top-nav{
+.top-nav {
   white-space: nowrap;
   display: flex;
   width: 92%;
 }
-.top_btn{
+
+.top_btn {
   display: inline-block;
   margin: 10px;
   font-size: 32rpx;
   color: gray;
 }
+
 .pull-container {
   position: fixed;
   top: 1rpx;
   right: 0;
-  background-image:linear-gradient(to right, rgba(255,255,255,0.5), rgb(255,255,255));
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.5), rgb(255, 255, 255));
   width: 70rpx;
   height: 70rpx;
-  border-left: rgba(158,158,158,0.54) solid 1px;
+  border-left: rgba(158, 158, 158, 0.54) solid 1px;
 }
+
 .pull_up {
   width: 44rpx;
   height: 44rpx;
   margin: 18rpx 8rpx;
 }
+
 .pull-block {
   text-align: center;
 }
+
 .pull-btn {
   display: inline-block;
   margin: 20rpx 35rpx;
@@ -53,9 +61,11 @@
   border-radius: 30rpx;
   background-color: rgba(158, 158, 158, 0.2);
 }
+
 .section {
   margin-left: -100rpx;
 }
+
 .search {
   margin-top: 100rpx;
   margin-bottom: 34rpx;
@@ -70,55 +80,77 @@
   background-origin: content-box;
   background-position: -12%;
 }
+
 .tc {
   text-align: center;
   width: 100%;
 }
+
 .video-title {
   font-size: 32rpx;
   display: block;
-  margin:0 auto;
+  margin: 0 auto;
   padding-top: 18px;
   padding-bottom: 14px;
 }
+
 .video-bottom {
   margin-bottom: 35px;
 }
+
 .eye {
   width: 18px;
   height: 18px;
   float: left;
   margin-left: 20px;
 }
-.heart {
+
+.unlike {
   width: 18px;
   height: 18px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAACy0lEQVRoQ+2Z3XGbQBDHb4Xe9BC7gpA3STATdRB1EKeC2BXEqsBJBbYriFxB7A6cCuzM3El6VCqINANvQptZ5lAAIeDgADGRXjyDj93/b3e5jz1gLf9By/Wz/wPANM2zXq/3EQAuGGNnjLGxzNwz/UXEqeu6T8vlcpUnown2RtKub48x9rjZbJ4Wi8Uyy15qBvr9vmkYxg0AXGYZCoFMDoFI4behQGSZJZBJGshBAMuyLgHgVkYmy1H4/yvP867m8/lj+OFgMLgwDON7AXtk5ppzfp8kIhHAsiyK0rWK6vhYRJwIIe7ouQwGiS/8ozIVQlzFDewB2Lb9lTF2U9hT6EVE9B0CQCnxgcntdns/m80igY0AyDT/0CG+KhsUFCHENLC/A5Af2AsAmFU512R35TjOu2Ci2AHoLB1NQtPMfOOcU6n/W8hs2/5TcIaoQe+eixXn/HwHYFnWCABemlBS1KfneZ9oqvZLqGXl4zMHM1IAQEv4h6LRaOi9n5zz8Qmgoej7bjnncMpAgxmIfAPa9j91AUVmodavA3ItoNPUm7oiWNLPmnNOJ8PIVqJNZbS/F5K70VcAeFsyOlW/vnYcx9zbjZLXVp8HgrAd874o80RGELKUngHgfdW1oGIfEX+5rjuOdzwSD/XHBnFIfGQWikfjWCDSxKcCHEM5IeJv13VHaR2/zN5og5lYI+JYCPGa9q1kAtDL1GLsdrtkqK6VOpf4zBIKk8v9Ep3cqobILV4JgAbXAKEkXhmgYghl8YUAqoII2iQqi1thgBCEll5SvN+pApFrFjpkUFPbPNKsVRFfKgOBozIQZSIf+C+VgTIQOsRryUARiPDtjWrJxMdryYAKBCI+CCFyXRrmgdMKQA6Hw+Fdp9P5kuRct3itJRTbdkwB4HP4WRXiKwOQ6wRdxvkXcgAwDW5U8pSFyhjtJaTiXMfYE4COKJax8ReIKXZA1WsC2wAAAABJRU5ErkJggg==');
+  background-size: 100% 100%;
+  display: inline-block;
 }
+
+.like {
+   width: 18px;
+  height: 18px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAC5UlEQVRoQ+2ZQZbSQBCGq+B1xs0g7uY9BZmNE1ZyA7mBeAJnTiCcYMYTMHOCwRPI3ABPIK5ANyroe+4MzEbTD8rXjclACEmadIAo2fBe6FT9X1Wlu7qDkPILU64f/g+Az3nI2zn2nAhrAJQHxKrMHFFH/CBCyxjzm2MLrCgZXbYHFQDMO/YAoU02vyn/gC9h9gIz0DuCUoaxc0I8DTMkQYhaxi1vrAKRwg9ZkxBqUnDYRdAmbjeCQFYC9ArsFBGakRwtCCELaXp2Mpy0529/LGRrhJlrdXsy1XVzwK/8eH0B+gXWBMR6WICC/6eGOeCXYswsGHgdx57I7smQn3ltLAH0isYFApzHceY8S0TSYVzxrpYpXZnf+EJgFwBmac6+1SE+KRsiKOUhbzn2XQDxgv3OGe8BoJSUcz12yToY82NnonABdJaOHqGrrRDA6/LAvpDl6QzrF9nP9WaIpOX62SfLHPAHLsCnh6wyzaIon9RcSJMXYqqWGUhT+XhnpBlAgXUQ8Vlqwi+7GHpXHvLqHmCbWTMHNu4zsK0MLL4DGvufjQH97YtkCaV+HRAQ/SKzAPD+xiIYyxGNzAGXG6J/pxcS3eivnNFFgMexgpP4wzQ6GPPSUjcq/KZ6P+AEbqf7orAdmYCQG5tD1gHEp4lXg4oDog8Ht7zqPfHw3dTvHMQK8QuzkDcYOwMRID4QYBfKiQC+3hvblaATv9Cz0e1lgkaZCVSffOfdoFclFEBueI6ghAbrbm6ljiY+tITmyWf9EnSSh4guXgngrulLEkJNvDJAshDq4tcCSArCOSZRWdvWBtC9h/Ced6pARJqFVhnUcWweR3ysDLjNX4yz/7jitQDIdWINCB3itQGoQ9x9vVGpd7+xsd4Br8EomSCiN+Uhj/TRMAqcVgDhsP+IXUIGX/k51y1eawnNC+4VWAsRX87fS0J8YgAyE0VWJ3C/dLacLypRykJljPYSUnGuY+weQEcU49j4A+UEf0C1A/1TAAAAAElFTkSuQmCC');
+  background-size: 100% 100%;
+  display: inline-block;
+}
+
 .conment {
   width: 18px;
   height: 18px;
 }
+
 .share {
   width: 18px;
   height: 18px;
   float: right;
   margin-right: 10px;
 }
+
 .watch-count {
   float: left;
   font-size: 16px;
   padding-left: 5px;
 }
+
 .like-count {
   font-size: 16px;
   margin-right: 10px;
   margin-left: 10px;
 }
+
 .conment-count {
   margin-right: 10px;
   font-size: 16px;
   margin-left: 10px;
 }
+
 .right {
   float: right;
 }
