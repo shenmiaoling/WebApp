@@ -1,8 +1,5 @@
 <!--pages/editUser/editUser.wxml-->
 <view class="edit-info">
-    <view class="edit-title">
-        编辑个人资料
-    </view>
     <text class="save" bindtap="saveInfo">保存</text>
 </view>
 <view class="content-list">
@@ -15,7 +12,7 @@
 </view>
 <view class="content-list">
   <text class="avatar-text">昵称</text>
-    <input class="name" value="{{userInfo.nickName}}" bindinput="bindNickname"/>
+    <input class="name" value="{{userInfo.nickname}}" bindinput="bindNickname"/>
 </view>
 <view class="content-list">
   <text class="avatar-text">性别</text>

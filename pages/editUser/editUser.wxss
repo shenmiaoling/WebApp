@@ -13,10 +13,8 @@
 .save {
     font-size: 19px;
     display: inline-block;
-    float:right;
     padding-top: 17px;
     padding-bottom: 12px;
-    padding-right: 24px;
 }
 .content-list {
   font-size: 16px;

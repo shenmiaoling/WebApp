@@ -8,19 +8,18 @@ Page({
     like: false,
     vid: '',
     listLi: [],
-    token : wx.getStorageInfoSync("token"),
     // ['http://techslides.com/demos/sample-videos/small.mp4',
     //   'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
     //   'http://techslides.com/demos/sample-videos/small.mp4'],
     page: 1,
     scrollTop: 0,
     done: false,
-    hidden: true
-    
+    hidden: true,
+    favorites: [],
   },
-  onLoad: function () {
+  onLoad: function (event) {
     this.getList(1)
-    this.getLike()
+    this.getLike(event)
   },
   //事件处理函数
   bindViewTap: function () {
@@ -38,10 +37,10 @@ Page({
   clickFavorite: function (event) {
     var _this = this
     var vid = event.currentTarget.dataset.id
-    var token = wx.getStorageInfoSync("token")
+    var token = wx.getStorageSync('token')
     wx.request({
       url: api.api + `/user/favorite?vid=${vid}&token=${token}`,
-      method: 'POST', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      method: 'POST', 
       success: function (res) {
         console.log(res)
         _this.setData({
@@ -58,18 +57,21 @@ Page({
     });
     this.getList(1, true);
   },
-  getLike: function(){
-    console.log("success")
-    var token = wx.getStorageInfoSync("token")
-    console.log(this.data.token)
+  getLike: function(event){
+    var token = wx.getStorageSync('token')
+    var that = this
     wx.request({
       url: api.api + `/user/favorite/get?&token=${token}`,
       data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      method: 'GET', 
       success: function(res){
         console.log("success")
-        console.log(res.data)// success
+        that.setData({
+          favorites:res.data.favorites
+        })
+        res.data.favorites.map((item,index)=>{
+          // if(item._id)
+        }) 
       },
     })
   },

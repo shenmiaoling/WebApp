@@ -18,7 +18,6 @@ Page({
         name: '女'
       }
     ],
-    index: 0,
   },
   bindNickname: function (e) {
     this.setData({
@@ -40,10 +39,20 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function (res) {
+        console.log(res.data)
+        if (res.data.sex === 2) {
+          that.setData({
+            index: 0
+          })
+        } else {
+          that.setData({
+            index: 1
+          })
+        }
         that.setData({
           avatar: res.data.head_pic,
           userInfo: res.data
-        })// success
+        })
       }
     })
   },
@@ -68,7 +77,6 @@ Page({
   },
   saveInfo: function () {
     var token = wx.getStorageSync('token')
-    console.log(this.data.nickname)
     wx.request({
       url: api.api + `/user/change?token=${token}`,
       data: {
@@ -76,30 +84,28 @@ Page({
         sex: this.data.array[this.data.index],
         signature: this.data.signature
       },
-      method: 'PATCH', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      method: 'PATCH',
       success: function (res) {
-        // console.log("hh")
         wx.navigateBack()
+      }
+    })
+    this.postAvatar()
+  },
+  postAvatar: function (){
+    console.log('hh')
+    var token = wx.getStorageSync('token')
+    wx.request({
+      url: api.api + `/user/headimg/r?token=${token}`,
+      data: {
+        headimg : this.data.avatar
       },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
+      method: 'PATCH',
+      success: function(res){
+        console.log(this.data.avatar)
       }
     })
   },
   onReady: function () {
-    // 页面渲染完成
-  },
-  onShow: function () {
-    // 页面显示
-  },
-  onHide: function () {
-    // 页面隐藏
-  },
-  onUnload: function () {
-    // 页面关闭
+    wx.setNavigationBarTitle({ title: '编辑个人资料' })
   }
 })
