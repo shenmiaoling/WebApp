@@ -1,63 +1,63 @@
 {
-  "pages":[
+  "pages": [
+    "pages/flop/flop",
     "pages/editUser/editUser",
     "pages/index/index",
     "pages/post/post",
     "pages/user/user",
-    "pages/flop/flop",
     "pages/releaseVideo/releaseVideo",
     "pages/news/news",
-    
     "pages/logs/logs"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "头牌",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "backgroundColor": "#fbfbfb",
     "borderStyle": "white",
-    "selectedColor":"#d81e06",
+    "selectedColor": "#d81e06",
     "color": "#aaa",
     "list": [
-    {
-      "pagePath": "pages/index/index",
-      "text": "首页",
-      "iconPath": "images/home.png",
-      "selectedIconPath": "images/home (1).png"
-    },
-    {
-      "text": "翻牌",
-      "pagePath": "pages/flop/flop",
-      "iconPath": "images/tv.png",
-      "selectedIconPath": "images/tv (1).png"
-    },
-    {
-      "pagePath": "pages/post/post",
-      "text": "发布",
-      "iconPath": "images/camera.png",
-      "selectedIconPath": "images/camera (1).png"
-    },
-    {
-      "pagePath": "pages/news/news",
-      "text": "消息",
-      "iconPath": "images/News.png",
-      "selectedIconPath": "images/News (1).png"
-    },
-    {
-      "pagePath": "pages/user/user",
-      "text": "我的",
-      "iconPath": "images/user.png",
-      "selectedIconPath": "images/user (1).png"
-    }]
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home (1).png"
+      },
+      {
+        "text": "翻牌",
+        "pagePath": "pages/flop/flop",
+        "iconPath": "images/tv.png",
+        "selectedIconPath": "images/tv (1).png"
+      },
+      {
+        "pagePath": "pages/post/post",
+        "text": "发布",
+        "iconPath": "images/camera.png",
+        "selectedIconPath": "images/camera (1).png"
+      },
+      {
+        "pagePath": "pages/news/news",
+        "text": "消息",
+        "iconPath": "images/News.png",
+        "selectedIconPath": "images/News (1).png"
+      },
+      {
+        "pagePath": "pages/user/user",
+        "text": "我的",
+        "iconPath": "images/user.png",
+        "selectedIconPath": "images/user (1).png"
+      }
+    ]
   },
-    "networkTimeout": {
-      "request": 5000,
-      "connectSocket": 5000,
-      "uploadFile": 5000,
-      "downloadFile": 5000
-    },
-    "debug": true
+  "networkTimeout": {
+    "request": 5000,
+    "connectSocket": 5000,
+    "uploadFile": 5000,
+    "downloadFile": 5000
+  },
+  "debug": true
 }

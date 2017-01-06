@@ -1,15 +1,20 @@
 
 <!--pages/flop/flop.wxml-->
+<import src="../index/index.wxml"/>
 <swiper style="height:100%" bindchange="changePosition">
   <block wx:for="{{videoUrls}}" wx:key="{{index}}">
-    <swiper-item>
+    <swiper-item class="swiper-item">
       <view class="video-owner">
         <image src="/images/avatar.jpg" class="avatar"></image>
-        <text>舞动人生</text>
+        <view class="user-name">舞动人生</view>
+        <view class="add-follow">+ 关注</view>
       </view>
-        <video src="{{item}}" class="slide-image" style="width:100%;height: 50%" controls></video>
+      <template is="video-model"/>
+        <!--<video src="{{item}}" class="slide-image" style="width:100%;height: 50%" controls></video>-->
     </swiper-item>
   </block>
 </swiper>
 <view class="swiper-bottom"></view>
 <view class="swiper-bottom2"></view>
+<view>左滑无感</view>
+<view>右滑喜欢</view>
