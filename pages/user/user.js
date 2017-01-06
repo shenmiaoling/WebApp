@@ -35,9 +35,6 @@ Page({
                   console.log('success' + res)
                   console.log(res)// success
                   wx.setStorageSync('token', res.data.token)
-                },
-                complete: function () {
-                  // complete
                 }
               })
 
@@ -77,6 +74,11 @@ Page({
   releasedVideo: function () {
     wx.navigateTo({
       url: '../releaseVideo/releaseVideo'
+    })
+  },
+  handleFollow: function(){
+    wx.navigateTo({
+      url: '../follow/follow',
     })
   },
   onReady: function () {

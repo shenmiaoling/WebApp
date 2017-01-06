@@ -6,7 +6,7 @@
   </view>
   <view class="Row">
       <view class="Column" bindtap="releasedVideo">0</view>
-      <view class="Column">0</view>
+      <view class="Column" bindtap="handleFollow">0</view>
       <view class="Column">0</view>
   </view>
   <view class="Row-text">

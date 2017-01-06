@@ -4,9 +4,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  /*padding-top: 66px;*/
-  /*padding-bottom: 66px;*/
-  /*background-color: #646d2b;*/
   width: 100%;
   position: relative;
 }

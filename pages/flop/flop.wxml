@@ -2,19 +2,32 @@
 <!--pages/flop/flop.wxml-->
 <import src="../index/index.wxml"/>
 <swiper style="height:100%" bindchange="changePosition">
-  <block wx:for="{{videoUrls}}" wx:key="{{index}}">
+  <block wx:for="{{listLi}}" wx:key="{{index}}">
     <swiper-item class="swiper-item">
       <view class="video-owner">
-        <image src="/images/avatar.jpg" class="avatar"></image>
-        <view class="user-name">舞动人生</view>
-        <view class="add-follow">+ 关注</view>
+        <image src="{{item.poster.head_pic}}" class="avatar"></image>
+        <view class="user-name">{{item.poster.nickname}}</view>
+        <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
+        <view class="followed" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? false : true}}">√ 已关注</view>
       </view>
-      <template is="video-model"/>
-        <!--<video src="{{item}}" class="slide-image" style="width:100%;height: 50%" controls></video>-->
+        <video src="{{item.video_url.vid_url}}" class="slide-image" style="width:100%;height: 50%" controls></video>
+        <view class="video-title">
+          {{item.title}}
+        </view>
+        <view class="video-bottom">
+          <image src="/images/eye.png" class="eye"></image>
+          <span class="watch-count">{{item.view_number}}</span> 
+          <view class="right">
+            <view class="unlike {{like && vid==item._id? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="clickFavorite"></view>
+            <span class="like-count">{{item.like_number}}</span> 
+            <image src="/images/conment.png" class="conment"></image>
+            <span class="conment-count">{{item.comment_number}}</span> 
+          </view>
+        </view>
     </swiper-item>
   </block>
 </swiper>
 <view class="swiper-bottom"></view>
 <view class="swiper-bottom2"></view>
-<view>左滑无感</view>
-<view>右滑喜欢</view>
+<view class="flopL">←左滑无感</view>
+<view class="flopR">右滑喜欢→</view>

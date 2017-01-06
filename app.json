@@ -1,11 +1,13 @@
 {
   "pages": [
+    "pages/user/user",
+    "pages/follow/follow",
+    
+    "pages/releaseVideo/releaseVideo",
     "pages/flop/flop",
     "pages/editUser/editUser",
     "pages/index/index",
     "pages/post/post",
-    "pages/user/user",
-    "pages/releaseVideo/releaseVideo",
     "pages/news/news",
     "pages/logs/logs"
   ],

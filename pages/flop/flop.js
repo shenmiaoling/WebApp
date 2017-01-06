@@ -2,38 +2,66 @@
 var api = require("../../utils/api.js")
 Page({
   data: {
-    videoUrls:[      'http://techslides.com/demos/sample-videos/small.mp4',
-      'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
-      'http://techslides.com/demos/sample-videos/small.mp4']
+      listLi: [],
+      fan: false,
   },
+  
   onLoad: function(e) {
-    this.getVideo()
-    console.log(Window)
+    this.getList(1)
   },
   changePosition: function (e) {
-    console.log(e.target.offsetLeft)
+    console.log(e)
+     console.log(e.detail.current)
   },
-  getVideo: function(e) {
+  getList: function (page, stopPull) {
     var that = this
     wx.request({
-      url: api.api + '/user/video/get',
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
+      url: api.api + '/video',
+      data: {
+        page: page,
+        per: '20'
+      },
+      method: 'GET',
+      success: function (res) {
         console.log(res)
-        that.setData({
-          videoUrls:res.data.map(function (item) {
-            item.video_url.vid_url = "http://" + item.video_url.vid_url
-             return item.video_url.vid_url
+        if (page === 1) {
+          that.setData({
+            page: page + 1,
+            listLi: res.data,
+            done: false
           })
+          if (stopPull) {
+            wx.stopPullDownRefresh()
+          }
+        } else {
+          if (res.data < 5) {
+            that.setData({
+              page: page + 1,
+              listLi: that.data.listLi.concat(res.data),
+              done: true
+            })
+          } else {
+            that.setData({
+              page: page + 1,
+              listLi: that.data.listLi.concat(res.data)
+            })
+          }
+        }
+      },
+    })
+  },
+  handleFan(event){
+    var that =this
+    var poster_id = event.currentTarget.dataset.id
+    var token = wx.getStorageSync('token')
+    wx.request({
+      url: api.api + `/user/fan/${poster_id}?token=${token}`,
+      method: 'POST',
+      success: function(res){
+        that.setData({
+          fan:!that.data.fan,
+          poster_id: poster_id
         })
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
       }
     })
   }
