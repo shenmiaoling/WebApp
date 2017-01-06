@@ -69,9 +69,9 @@ Page({
         that.setData({
           favorites:res.data.favorites
         })
-        res.data.favorites.map((item,index)=>{
-          // if(item._id)
-        }) 
+        // res.data.favorites.map((item,index)=>{
+        //   // if(item._id)
+        // }) 
       },
     })
   },
@@ -125,5 +125,25 @@ Page({
       var page = this.data.page;
       this.getList(page)
     }
+  },
+  handlePoster: function(){
+    wx.navigateTo({
+      url: '../poster/poster',
+      success: function(res){
+      }
+    })
+  },
+  handleHistory: function(event){
+    var vid = event.currentTarget.dataset.id
+    var token = wx.getStorageSync('token')
+    console.log(token)
+    wx.request({
+      url: api.api + `/user/history?vid=${vid}&token=${token}`,
+      data: {},
+      method: 'POST', 
+      success: function(res){
+        console.log(res)// success
+      }
+    })
   }
 })

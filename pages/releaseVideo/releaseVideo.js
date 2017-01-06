@@ -23,7 +23,7 @@ Page({
     })
   },
   onReady: function () {
-    // 页面渲染完成
+    wx.setNavigationBarTitle({  title: '我的视频'})
   },
   onShow: function () {
     // 页面显示

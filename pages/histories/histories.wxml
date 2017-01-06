@@ -1,2 +1,3 @@
 <!--pages/histories/histories.wxml-->
-<text>pages/histories/histories.wxml</text>
+<import src="../favorites/favorites.wxml"/>
+<template is="favorites-videos" data="{{listLi}}"/>

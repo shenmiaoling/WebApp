@@ -1,16 +1,20 @@
 {
   "pages": [
+    "pages/index/index",
+    "pages/favorites/favorites",
+    "pages/histories/histories",
+    
     "pages/user/user",
     "pages/fans/fans",
-    "pages/favorites/favorites",
-    "pages/hobbies/hobbies",
-    "pages/histories/histories",
-    "pages/follow/follow",
     
+    "pages/hobbies/hobbies",
+    
+    "pages/follow/follow",
+    "pages/poster/poster",
     "pages/releaseVideo/releaseVideo",
     "pages/flop/flop",
     "pages/editUser/editUser",
-    "pages/index/index",
+    
     "pages/post/post",
     "pages/news/news",
     "pages/logs/logs"

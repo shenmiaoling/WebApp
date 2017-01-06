@@ -19,7 +19,20 @@
   border-top: #eee solid 1px;
   border-bottom: #eee solid 1px;
 }
+.avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-left: 15px;
+  margin-right: 12px;
+  display: inline-block;
+}
 
+.user-name {
+  display: inline-block;
+  padding-bottom: 20px;
+  vertical-align: middle;
+}
 .top-nav {
   white-space: nowrap;
   display: flex;
@@ -81,15 +94,10 @@
   background-position: -12%;
 }
 
-.tc {
-  text-align: center;
-  width: 100%;
-}
 
 .video-title {
   font-size: 32rpx;
-  display: block;
-  margin: 0 auto;
+  text-align: center;
   padding-top: 18px;
   padding-bottom: 14px;
 }

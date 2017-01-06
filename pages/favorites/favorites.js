@@ -1,19 +1,27 @@
 // pages/favorites/favorites.js
+var api = require("../../utils/api.js")
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {
+    listLi:[]
   },
-  onReady:function(){
-    // 页面渲染完成
+  onLoad: function (options) {
+    this.getFavorites()
   },
-  onShow:function(){
-    // 页面显示
+  onReady: function () {
+    wx.setNavigationBarTitle({ title: '我喜欢的' })
   },
-  onHide:function(){
-    // 页面隐藏
-  },
-  onUnload:function(){
-    // 页面关闭
+  getFavorites: function(){
+    var token = wx.getStorageSync('token')
+    var that = this
+    wx.request({
+      url: api.api + `/user/favorite/get?&token=${token}`,
+      method: 'GET',
+      success: function(res){
+        console.log(res.data.favorites)
+        that.setData({
+          listLi : res.data.favorites
+        })
+      }
+    })
   }
 })

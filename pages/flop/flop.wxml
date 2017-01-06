@@ -10,7 +10,7 @@
         <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
         <view class="followed" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? false : true}}">√ 已关注</view>
       </view>
-        <video src="{{item.video_url.vid_url}}" class="slide-image" style="width:100%;height: 50%" controls></video>
+        <video src="{{item.video_url.vid_url}}" class="slide-image" style="width:100%;height: 50%" controls bindplay="handleHistory"></video>
         <view class="video-title">
           {{item.title}}
         </view>
