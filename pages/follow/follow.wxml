@@ -1,2 +1,8 @@
 <!--pages/follow/follow.wxml-->
-<text>pages/follow/follow.wxml</text>
+<view class="no-pub">
+    <view class="sad-emoji">(︶︹︺)</view>
+    <view class="tip-text">还没有关注任何人</view>
+    <view class="tip-text">关注感兴趣的人，头牌越来越懂你
+    <button class="pub-video">立即发布视频</button>
+    </view>
+</view>

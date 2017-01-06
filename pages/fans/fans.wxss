@@ -1,4 +1,4 @@
-/* pages/follow/follow.wxss */
+/* pages/fans/fans.wxss */
 .no-pub{
     text-align: center;
 }

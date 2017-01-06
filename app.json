@@ -1,6 +1,10 @@
 {
   "pages": [
     "pages/user/user",
+    "pages/fans/fans",
+    "pages/favorites/favorites",
+    "pages/hobbies/hobbies",
+    "pages/histories/histories",
     "pages/follow/follow",
     
     "pages/releaseVideo/releaseVideo",

@@ -76,9 +76,29 @@ Page({
       url: '../releaseVideo/releaseVideo'
     })
   },
-  handleFollow: function(){
+  handleFollows: function(){
     wx.navigateTo({
       url: '../follow/follow',
+    })
+  },
+  handleFans: function(){
+    wx.navigateTo({
+      url: '../fans/fans',
+    })
+  },
+  handleFavorites: function(){
+    wx.navigateTo({
+      url: '../favorites/favorites',
+    })
+  },
+  handleHistory: function(){
+    wx.navigateTo({
+      url: '../histories/histories',
+    })
+  },
+    handleHobby: function(){
+    wx.navigateTo({
+      url: '../hobbies/hobbies',
     })
   },
   onReady: function () {

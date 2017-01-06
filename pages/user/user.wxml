@@ -6,8 +6,8 @@
   </view>
   <view class="Row">
       <view class="Column" bindtap="releasedVideo">0</view>
-      <view class="Column" bindtap="handleFollow">0</view>
-      <view class="Column">0</view>
+      <view class="Column" bindtap="handleFollows">0</view>
+      <view class="Column" bindtap="handleFans">0</view>
   </view>
   <view class="Row-text">
       <view class="Column text">视频</view>
@@ -15,22 +15,17 @@
       <view class="Column text">粉丝</view>
   </view>
 </view>
-<view class="content-list">
-  <image src="/images/collect.png" class="content-ico"></image>
-  <text class="content-text">我的订阅</text>
-  <a class="go"></a>
-</view>
-<view class="content-list">
+<view class="content-list" bindtap="handleFavorites">
   <image src="/images/hearta.png" class="content-ico"></image>
   <text class="content-text">我喜欢的</text>
   <a class="go"></a>
 </view>
-<view class="content-list">
+<view class="content-list" bindtap="handleHistory">
   <image src="/images/eye.png" class="content-ico"></image>
   <text class="content-text">播放历史</text>
   <a class="go"></a>
 </view>
-<view class="content-list">
+<view class="content-list" bindtap="handleHobby">
   <image src="/images/star.png" class="content-ico"></image>
   <text class="content-text">兴趣选择</text>
   <a class="go"></a>
