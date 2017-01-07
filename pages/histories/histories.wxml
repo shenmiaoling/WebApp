@@ -1,3 +1,11 @@
 <!--pages/histories/histories.wxml-->
-<import src="../favorites/favorites.wxml"/>
-<template is="favorites-videos" data="{{listLi}}"/>
+<view class="clear" bindtap="handleClear">清除</view>
+<view class="poster" wx:for="{{listLi}}" wx:key="{{index}}">
+  <image src="{{item.cover.cover_url}}" class="poster-cover"></image>
+  <view class="video-title">{{item.videoId.title}}
+    <view class="history">
+      <image src="/images/eye.png" class="eye"></image>
+      <text> {{item.videoId.view_number}}</text>
+    </view>
+  </view>
+</view>

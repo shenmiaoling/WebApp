@@ -3,7 +3,7 @@ var api = require("../../utils/api")
 var app = getApp()
 Page({
   data: {
-    avatar: '',
+    avatar: [],
     nickname: '',
     userInfo: {},
     signature: '',
@@ -80,28 +80,30 @@ Page({
       url: api.api + `/user/change?token=${token}`,
       data: {
         nickname: this.data.nickname,
-        sex: this.data.index+1,
+        sex: this.data.index + 1,
         signature: this.data.signature
       },
       method: 'PATCH',
       success: function (res) {
-        console.log(res)
+        // console.log(res)
         wx.navigateBack()
       }
     })
     this.postAvatar()
   },
-  postAvatar: function (){
-    console.log('hh')
+  postAvatar: function () {
     var token = wx.getStorageSync('token')
-    wx.request({
+    console.log(token)
+    wx.uploadFile({
       url: api.api + `/user/headimg/r?token=${token}`,
-      data: {
-        headimg : this.data.avatar
+      filePath: this.data.avatar[0],
+      name: 'headimg',
+      success: function (res) {
+        console.log("success")
+        console.log(res)
       },
-      method: 'PATCH',
-      success: function(res){
-        console.log(this.data.avatar)
+      fail: function(err){
+        console.log(err)
       }
     })
   },

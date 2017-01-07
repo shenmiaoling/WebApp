@@ -6,6 +6,7 @@
   align-items: center;
   width: 100%;
   position: relative;
+  text-align: center;
 }
 
 .blur-image {
@@ -23,6 +24,7 @@
   width: 74px;
   height: 74px;
   border-radius: 50%;
+  text-align: center;
 }
 
 .userinfo-nickname {
@@ -30,6 +32,7 @@
   font-size: 16px;
   position: absolute;
   top: 156px;
+  text-align: center
 }
 
 .usermotto {

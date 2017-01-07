@@ -11,7 +11,18 @@
   <view class="line"></view>
   <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="postVideo">↑ 发布</button>
 </view>
-<view class="active-title">参与活动</view>
-<view class="label" id="label-id" bindtap="getLabel">#今天你菇了么？#</view>
-<view class="label" bindtap="getLabel">#今天你菇了么？#</view>
-<view class="label" bindtap="getLabel">#今天你菇了么？#</view>
+<view class="active-title">标签</view>
+<view class="pull-block">
+  <view class="pull-btn {{true ? 'label-color' : 'pull-btn'}}" >热门</view>
+  <view class="pull-btn">逗比</view>
+  <view class="pull-btn">猎奇</view>
+  <view class="pull-btn">娱乐</view>
+  <view class="pull-btn">网红</view>
+  <view class="pull-btn">社会</view>
+  <view class="pull-btn">女神</view>
+  <view class="pull-btn">影视</view>
+  <view class="pull-btn">音乐</view>
+  <view class="pull-btn">动漫</view>
+  <view class="pull-btn">萌宠</view>
+  <view class="pull-btn">体育</view>
+</view>

@@ -21,16 +21,36 @@ Page({
       }
     })
   },
+  handleClear: function () {
+    var that = this
+    wx.showModal({
+      title: '确认清除',
+      content: '清除全部播放历史',
+      success: function (res) {
+        if (res.confirm) {
+          var token = wx.getStorageSync('token')
+          wx.request({
+            url: api.api + `/user/history/all/del?token=${token}`,
+            data: {},
+            method: 'DELETE',
+            success: function(res){
+              console.log(res)
+              that.setData({
+                listLi:[]
+              })
+            },
+            fail: function() {
+              // fail
+            },
+            complete: function() {
+              // complete
+            }
+          })
+        }
+      }
+    })
+  },
   onReady: function () {
     wx.setNavigationBarTitle({ title: '播放历史' })
-  },
-  onShow: function () {
-    // 页面显示
-  },
-  onHide: function () {
-    // 页面隐藏
-  },
-  onUnload: function () {
-    // 页面关闭
   }
 })

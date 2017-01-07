@@ -1,4 +1,9 @@
 /* pages/histories/histories.wxss */
+.clear{
+  text-align: right;
+  font-size: 19px;
+  margin-right: 24px;
+}
 .poster {
   margin: 15px;
 }

@@ -5,7 +5,6 @@ var app = getApp()
 Page({
   data: {
     pull: false,
-    like: false,
     vid: '',
     listLi: [],
     // ['http://techslides.com/demos/sample-videos/small.mp4',
@@ -67,6 +66,9 @@ Page({
       success: function(res){
         console.log("success")
         console.log(res.data.favorites)
+        res.data.favorites.map((v)=>{
+          return Object.assign(v,{like:true})
+        })
         that.setData({
           favorites:res.data.favorites
         })
@@ -84,10 +86,7 @@ Page({
       },
       method: 'GET',
       success: function (res) {
-        console.log(res)
-        // res.dada.map((v)=>{
-        //   return Object.assign(v,{like:true})
-        // })
+        console.log(res.data)
         if (page === 1) {
           that.setData({
             page: page + 1,
@@ -113,6 +112,9 @@ Page({
         }
       },
     })
+  },
+  handleChoose: function(event){
+    console.log(event)
   },
   onReachBottom: function () {
     var done = this.data.done;
