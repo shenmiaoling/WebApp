@@ -1,8 +1,11 @@
 <!--pages/fans/fans.wxml-->
-<view class="no-pub">
+<view class="no-pub" hidden="true">
     <view class="sad-emoji">(︶︹︺)</view>
     <view class="tip-text">还没有粉丝呢</view>
     <view class="tip-text">发视频才会有人关注你哦
-    <button class="pub-video">立即发布视频</button>
+    <button class="pub-video" bindtap="handlePublic">立即发布视频</button>
     </view>
+</view>
+<view class="fans">
+    <image src="/images/camera.png"></image>
 </view>

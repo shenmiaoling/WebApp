@@ -7,6 +7,11 @@ Page({
   onReady:function(){
     wx.setNavigationBarTitle({  title: '我的粉丝'})
   },
+  handlePublic: function(){
+    wx.switchTab({
+  url: '/pages/post/post'
+})
+  },
   onShow:function(){
     // 页面显示
   },

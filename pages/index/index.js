@@ -17,7 +17,8 @@ Page({
     favorites: [],
   },
   onLoad: function () {
-    this.getList(1)
+    var channel = '热门'
+    this.getList(1,true,channel)
     this.getLike()
   },
   //事件处理函数
@@ -76,10 +77,11 @@ Page({
       },
     })
   },
-  getList: function (page, stopPull) {
+  getList: function (page, stopPull,channel) {
     var that = this
+    console.log(channel)
     wx.request({
-      url: api.api + '/video',
+      url: api.api + `/video`,
       data: {
         page: page,
         per: '5'
@@ -114,7 +116,22 @@ Page({
     })
   },
   handleChoose: function(event){
-    console.log(event)
+    console.log(event.currentTarget.dataset.value)
+    wx.request({
+      url: api.api + 'https://URL',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
   },
   onReachBottom: function () {
     var done = this.data.done;
