@@ -32,43 +32,34 @@ Page({
                 method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
                 // header: {}, // 设置请求的 header
                 success: function (res) {
-                  console.log('success' + res)
                   console.log(res)// success
                   wx.setStorageSync('token', res.data.token)
-                }
-              })
-
-              var token = wx.getStorageSync('token')
-              
-              wx.request({
-                url: api.api + `/user/info?token=${token}`,
-                method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-                // header: {}, // 设置请求的 header
-                success: function (res) {
-                  console.log('hhhh')
-                  console.log(res)
-                  _this.setData({
-                    userInfo: res.data
-                  })
-                  // success
+                  _this.getToken(res.data.token)
                 }
               })
             }
           })
-
         }
         else {
           console.log('获取用户登录失败' + res.eres.errMsg)
         }
       }
     })
-    var that = this
-    //调用应用实例的方法获取全局数据
-    app.getUserInfo(function (userInfo) {
-      //更新数据
-      // that.setData({
-      //   userInfo: userInfo
-      // })
+  },
+  getToken: function (token) {
+    var _this = this
+    wx.request({
+      url: api.api + `/user/info?token=${token}`,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+     
+      success: function (res) {
+        console.log('hhhh')
+        console.log(res)
+        _this.setData({
+          userInfo: res.data
+        })
+        // success
+      }
     })
   },
   releasedVideo: function () {
@@ -76,27 +67,27 @@ Page({
       url: '../releaseVideo/releaseVideo'
     })
   },
-  handleFollows: function(){
+  handleFollows: function () {
     wx.navigateTo({
       url: '../follow/follow',
     })
   },
-  handleFans: function(){
+  handleFans: function () {
     wx.navigateTo({
       url: '../fans/fans',
     })
   },
-  handleFavorites: function(){
+  handleFavorites: function () {
     wx.navigateTo({
       url: '../favorites/favorites',
     })
   },
-  handleHistory: function(){
+  handleHistory: function () {
     wx.navigateTo({
       url: '../histories/histories',
     })
   },
-    handleHobby: function(){
+  handleHobby: function () {
     wx.navigateTo({
       url: '../hobbies/hobbies',
     })

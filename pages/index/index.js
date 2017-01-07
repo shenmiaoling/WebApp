@@ -17,9 +17,9 @@ Page({
     hidden: true,
     favorites: [],
   },
-  onLoad: function (event) {
+  onLoad: function () {
     this.getList(1)
-    this.getLike(event)
+    this.getLike()
   },
   //事件处理函数
   bindViewTap: function () {
@@ -57,7 +57,7 @@ Page({
     });
     this.getList(1, true);
   },
-  getLike: function(event){
+  getLike: function(){
     var token = wx.getStorageSync('token')
     var that = this
     wx.request({
@@ -66,12 +66,11 @@ Page({
       method: 'GET', 
       success: function(res){
         console.log("success")
+        console.log(res.data.favorites)
         that.setData({
           favorites:res.data.favorites
         })
-        // res.data.favorites.map((item,index)=>{
-        //   // if(item._id)
-        // }) 
+
       },
     })
   },
@@ -86,6 +85,9 @@ Page({
       method: 'GET',
       success: function (res) {
         console.log(res)
+        // res.dada.map((v)=>{
+        //   return Object.assign(v,{like:true})
+        // })
         if (page === 1) {
           that.setData({
             page: page + 1,

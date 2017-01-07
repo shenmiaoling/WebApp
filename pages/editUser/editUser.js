@@ -36,8 +36,7 @@ Page({
     var token = wx.getStorageSync('token')
     wx.request({
       url: api.api + `/user/info?token=${token}`,
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
+      method: 'GET',
       success: function (res) {
         console.log(res.data)
         if (res.data.sex === 2) {
@@ -81,11 +80,12 @@ Page({
       url: api.api + `/user/change?token=${token}`,
       data: {
         nickname: this.data.nickname,
-        sex: this.data.array[this.data.index],
+        sex: this.data.index+1,
         signature: this.data.signature
       },
       method: 'PATCH',
       success: function (res) {
+        console.log(res)
         wx.navigateBack()
       }
     })
