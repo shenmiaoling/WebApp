@@ -17,8 +17,8 @@ Page({
     favorites: [],
   },
   onLoad: function () {
-    var channel = '热门'
-    this.getList(1,true,channel)
+    var channel = 'hot'
+    this.getList(1, true, channel)
     this.getLike()
   },
   //事件处理函数
@@ -28,11 +28,9 @@ Page({
     })
   },
   pullLabel: function () {
-    console.log("hh")
     this.setData({
       pull: !this.data.pull
     })
-    console.log(this.data.pull)
   },
   clickFavorite: function (event) {
     var _this = this
@@ -40,7 +38,7 @@ Page({
     var token = wx.getStorageSync('token')
     wx.request({
       url: api.api + `/user/favorite?vid=${vid}&token=${token}`,
-      method: 'POST', 
+      method: 'POST',
       success: function (res) {
         console.log(res)
         _this.setData({
@@ -57,31 +55,30 @@ Page({
     });
     this.getList(1, true);
   },
-  getLike: function(){
+  getLike: function () {
     var token = wx.getStorageSync('token')
     var that = this
     wx.request({
       url: api.api + `/user/favorite/get?&token=${token}`,
       data: {},
-      method: 'GET', 
-      success: function(res){
+      method: 'GET',
+      success: function (res) {
         console.log("success")
         console.log(res.data.favorites)
-        res.data.favorites.map((v)=>{
-          return Object.assign(v,{like:true})
+        res.data.favorites.map((v) => {
+          return Object.assign(v, { like: true })
         })
         that.setData({
-          favorites:res.data.favorites
+          favorites: res.data.favorites
         })
-
       },
     })
   },
-  getList: function (page, stopPull,channel) {
+  getList: function (page, stopPull, channel) {
     var that = this
     console.log(channel)
     wx.request({
-      url: api.api + `/video`,
+      url: api.api + `/video/sort?channel=${channel}`,
       data: {
         page: page,
         per: '5'
@@ -115,23 +112,11 @@ Page({
       },
     })
   },
-  handleChoose: function(event){
-    console.log(event.currentTarget.dataset.value)
-    wx.request({
-      url: api.api + 'https://URL',
-      data: {},
-      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-      // header: {}, // 设置请求的 header
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
+  handleChoose: function (event) {
+    this.setData({
+      pull: !this.data.pull
     })
+    this.getList(1, true, event.currentTarget.dataset.value)
   },
   onReachBottom: function () {
     var done = this.data.done;
@@ -147,22 +132,22 @@ Page({
       this.getList(page)
     }
   },
-  handlePoster: function(){
+  handlePoster: function () {
     wx.navigateTo({
       url: '../poster/poster',
-      success: function(res){
+      success: function (res) {
       }
     })
   },
-  handleHistory: function(event){
+  handleHistory: function (event) {
     var vid = event.currentTarget.dataset.id
     var token = wx.getStorageSync('token')
     console.log(token)
     wx.request({
       url: api.api + `/user/history?vid=${vid}&token=${token}`,
       data: {},
-      method: 'POST', 
-      success: function(res){
+      method: 'POST',
+      success: function (res) {
         console.log(res)// success
       }
     })

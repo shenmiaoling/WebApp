@@ -6,36 +6,36 @@
   </template>
   <view class="menu">
     <scroll-view scroll-x="true" class="top-nav">
-      <view class="top_btn" bindtap="handleChoose" data-value="热门">热门</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="逗比">逗比</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="猎奇">猎奇</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="娱乐">娱乐</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="网红">网红</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="社会">社会</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="女神">女神</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="影视">影视</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="音乐">音乐</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="动漫">动漫</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="萌宠">萌宠</view>
-      <view class="top_btn" bindtap="handleChoose" data-value="体育">体育</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="hot">热门</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="dobe">逗比</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="curious">猎奇</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="entertainment">娱乐</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="interCelebrity">网红</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="society">社会</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="goddess">女神</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="movies">影视</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="music">音乐</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="comic">动漫</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="pet">萌宠</view>
+      <view class="top_btn" bindtap="handleChoose" data-value="sports">体育</view>
     </scroll-view>
     <view class="pull-container">
       <image src="/images/pull_up.png" class="pull_up" bindtap="pullLabel" hidden="{{pull ? true : false}}"></image>
       <image src="/images/pull_down.png" class="pull_up" bindtap="pullLabel" hidden="{{pull ? false : true}}"></image>
     </view>
     <view class="pull-block" hidden="{{pull ? false : true}}">
-      <view class="pull-btn" bindtap="handleChoose" data-value="热门">热门</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="逗比">逗比</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="猎奇">猎奇</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="娱乐">娱乐</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="网红">网红</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="社会">社会</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="女神">女神</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="影视">影视</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="音乐">音乐</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="动漫">动漫</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="萌宠">萌宠</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="体育">体育</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="hot">热门</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="dobe">逗比</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="curious">猎奇</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="entertainment">娱乐</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="interCelebrity">网红</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="society">社会</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="goddess">女神</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="movies">影视</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="music">音乐</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="comic">动漫</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="pet">萌宠</view>
+      <view class="pull-btn" bindtap="handleChoose" data-value="sports">体育</view>
     </view>
   </view>
   <view class="shadow" hidden="{{pull ? false : true}}" bindtap="pullLabel"></view>
@@ -47,7 +47,7 @@
 </view>
 <template name="video-model">
   <view wx:for="{{listLi}}" wx:key="{{index}}">
-    <video src="{{item.video_url.vid_url}}" controls style="width:100%;height: 175px" data-id="{{item._id}}" bindplay="handleHistory"></video>
+    <video src="{{item.video_url.vid_url}}" controls style="width:100%;height: 175px" data-id="{{item._id}}" bindplay="handleHistory" poster="{{item.cover.cover_url}}"></video>
     <image src="{{item.poster.head_pic}}" class="avatar" bindtap="handlePoster"></image>
     <view class="user-name">{{item.poster.nickname}}</view>
     <view class="video-title">
