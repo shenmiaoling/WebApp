@@ -16,17 +16,11 @@ Page({
     done: false,
     hidden: true,
     favorites: [],
+    newUrl: '/video/sort'
   },
   onLoad: function () {
-    // var channel = 'hot'
-    this.getList(1, true, this.data.channel)
+    this.getList(1, true, this.data.channel,this.data.newUrl)
     this.getLike()
-  },
-  //事件处理函数
-  bindViewTap: function () {
-    wx.navigateTo({
-      url: '../logs/logs'
-    })
   },
   pullLabel: function () {
     this.setData({
@@ -54,7 +48,7 @@ Page({
       title: '加载中',
       icon: 'loading'
     });
-    this.getList(1, true,this.data.channel);
+    this.getList(1, true,this.data.channel,this.data.newUrl);
   },
   getLike: function () {
     var token = wx.getStorageSync('token')
@@ -75,23 +69,30 @@ Page({
       },
     })
   },
-  getList: function (page, stopPull, channel) {
+  getList: function (page, stopPull, channel,newUrl) {
+    wx.showToast({
+      title: '加载中',
+      icon: 'loading',
+      duration: 5000
+    })
     var that = this
     console.log(channel)
     wx.request({
-      url: api.api + `/video/sort?channel=${channel}`,
+      url: api.api + `${newUrl}?channel=${channel}`,
       data: {
         page: page,
         per: '5'
       },
       method: 'GET',
       success: function (res) {
+        wx.hideToast()
         console.log(res.data)
         if (page === 1) {
           that.setData({
             page: page + 1,
             listLi: res.data,
-            done: false
+            done: false,
+            newUrl: '/video/sort/new'
           })
           if (stopPull) {
             wx.stopPullDownRefresh()
@@ -113,9 +114,13 @@ Page({
       },
     })
   },
+  handlePull: function(){
+    this.setData({
+      pull: !this.data.pull
+    })
+  },
   handleChoose: function (event) {
     this.setData({
-      pull: !this.data.pull,
       channel: event.currentTarget.dataset.value
     })
     this.getList(1, true, event.currentTarget.dataset.value)
@@ -131,7 +136,7 @@ Page({
         duration: 500
       });
       var page = this.data.page;
-      this.getList(page)
+      this.getList(page,true, this.data.channel,this.data.newUrl)
     }
   },
   handlePoster: function () {

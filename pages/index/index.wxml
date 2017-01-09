@@ -24,18 +24,18 @@
       <image src="/images/pull_down.png" class="pull_up" bindtap="pullLabel" hidden="{{pull ? false : true}}"></image>
     </view>
     <view class="pull-block" hidden="{{pull ? false : true}}">
-      <view class="pull-btn" bindtap="handleChoose" data-value="hot">热门</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="dobe">逗比</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="curious">猎奇</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="entertainment">娱乐</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="interCelebrity">网红</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="society">社会</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="goddess">女神</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="movies">影视</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="music">音乐</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="comic">动漫</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="pet">萌宠</view>
-      <view class="pull-btn" bindtap="handleChoose" data-value="sports">体育</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="hot">热门</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="dobe">逗比</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="curious">猎奇</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="entertainment">娱乐</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="interCelebrity">网红</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="society">社会</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="goddess">女神</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="movies">影视</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="music">音乐</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="comic">动漫</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="pet">萌宠</view>
+      <view class="pull-btn" bindtap="handlePull" data-value="sports">体育</view>
     </view>
   </view>
   <view class="shadow" hidden="{{pull ? false : true}}" bindtap="pullLabel"></view>

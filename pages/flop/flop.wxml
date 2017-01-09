@@ -1,7 +1,7 @@
 
 <!--pages/flop/flop.wxml-->
 <import src="../index/index.wxml"/>
-<swiper style="height:100%" bindchange="changePosition">
+<swiper style="height:100%">
   <block wx:for="{{listLi}}" wx:key="{{index}}">
     <swiper-item class="swiper-item">
       <view class="video-owner">
