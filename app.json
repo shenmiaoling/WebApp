@@ -1,13 +1,17 @@
 {
   "pages": [
-    "pages/editUser/editUser",
+    "pages/post/post",
     "pages/index/index",
+    
+    
+    "pages/editUser/editUser",
+    
     "pages/fans/fans",
     "pages/follow/follow",
     
     
     
-    "pages/post/post",
+    
     
     "pages/histories/histories",
     

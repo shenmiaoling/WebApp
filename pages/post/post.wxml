@@ -2,15 +2,15 @@
 <!--pages/post/post.wxml-->
 
 <!--hidden="{{video ? false : true}}"-->
-<view class="container">
+<view class="container" hidden="{{video ? false : true}}">
 
-  <!--<video src="{{src}}" preload="load">
+  <!--<video src="{{src}}" class="post-img" controls="false">
     </video>-->
   <image class="post-img" src="http://wallpaper-gallery.net/images/cute-pictures/cute-pictures-9.jpg"></image>
   <textarea bindinput="bindinput" class="text" maxlength="50" placeholder="添加视频描述，让更多人看到你的视频" placeholder-style="color:rgba(0,0,0,0.26);font-size:15px" />
   <view class="line"></view>
-  <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="postVideo">↑ 发布</button>
-</view>
+  <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="handlePost">↑ 发布</button>
+
 <view class="active-title">标签</view>
 <view class="pull-block">
   <view class="pull-btn {{true ? 'label-color' : 'pull-btn'}}" >热门</view>
@@ -25,4 +25,5 @@
   <view class="pull-btn">动漫</view>
   <view class="pull-btn">萌宠</view>
   <view class="pull-btn">体育</view>
+</view>
 </view>

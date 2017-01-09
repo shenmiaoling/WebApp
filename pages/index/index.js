@@ -7,6 +7,7 @@ Page({
     pull: false,
     vid: '',
     listLi: [],
+    channel: 'hot',
     // ['http://techslides.com/demos/sample-videos/small.mp4',
     //   'http://clips.vorwaerts-gmbh.de/big_buck_bunny.mp4',
     //   'http://techslides.com/demos/sample-videos/small.mp4'],
@@ -17,8 +18,8 @@ Page({
     favorites: [],
   },
   onLoad: function () {
-    var channel = 'hot'
-    this.getList(1, true, channel)
+    // var channel = 'hot'
+    this.getList(1, true, this.data.channel)
     this.getLike()
   },
   //事件处理函数
@@ -53,7 +54,7 @@ Page({
       title: '加载中',
       icon: 'loading'
     });
-    this.getList(1, true);
+    this.getList(1, true,this.data.channel);
   },
   getLike: function () {
     var token = wx.getStorageSync('token')
@@ -114,7 +115,8 @@ Page({
   },
   handleChoose: function (event) {
     this.setData({
-      pull: !this.data.pull
+      pull: !this.data.pull,
+      channel: event.currentTarget.dataset.value
     })
     this.getList(1, true, event.currentTarget.dataset.value)
   },

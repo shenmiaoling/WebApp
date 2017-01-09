@@ -3,7 +3,7 @@ var api = require("../../utils/api")
 var app = getApp()
 Page({
   data: {
-    avatar: [],
+    avatar: '',
     nickname: '',
     userInfo: {},
     signature: '',
@@ -99,7 +99,6 @@ Page({
       filePath: this.data.avatar[0],
       name: 'headimg',
       success: function (res) {
-        console.log("success")
         console.log(res)
       },
       fail: function(err){

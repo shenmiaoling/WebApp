@@ -17,36 +17,12 @@ Page({
     var that = this
     wx.request({
       url: api.api + '/video',
-      data: {
-        page: page,
-        per: '20'
-      },
       method: 'GET',
       success: function (res) {
         console.log(res)
-        if (page === 1) {
           that.setData({
-            page: page + 1,
             listLi: res.data,
-            done: false
-          })
-          if (stopPull) {
-            wx.stopPullDownRefresh()
-          }
-        } else {
-          if (res.data < 5) {
-            that.setData({
-              page: page + 1,
-              listLi: that.data.listLi.concat(res.data),
-              done: true
-            })
-          } else {
-            that.setData({
-              page: page + 1,
-              listLi: that.data.listLi.concat(res.data)
-            })
-          }
-        }
+          }) 
       },
     })
   },
