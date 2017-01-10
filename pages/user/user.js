@@ -29,8 +29,7 @@ Page({
                   encryptedData: encryptedData,
                   iv: iv
                 },
-                method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
-                // header: {}, // 设置请求的 header
+                method: 'GET',
                 success: function (res) {
                   console.log(res)// success
                   wx.setStorageSync('token', res.data.token)
@@ -93,7 +92,38 @@ Page({
     })
   },
   onReady: function () {
-    // 页面渲染完成
+    var _this = this
+    wx.login({
+      success: function (res) {
+        if (res.code) {
+          var code = res.code;
+          wx.getUserInfo({
+            success: function (res2) {
+              console.log(res2)
+              var encryptedData = res2.encryptedData
+              var iv = res2.iv
+              wx.request({
+                url: api.api + '/session',
+                data: {
+                  code: code,
+                  encryptedData: encryptedData,
+                  iv: iv
+                },
+                method: 'GET',
+                success: function (res) {
+                  console.log(res)// success
+                  wx.setStorageSync('token', res.data.token)
+                  _this.getToken(res.data.token)
+                }
+              })
+            }
+          })
+        }
+        else {
+          console.log('获取用户登录失败' + res.eres.errMsg)
+        }
+      }
+    })
   },
   onShow: function () {
     // 页面显示

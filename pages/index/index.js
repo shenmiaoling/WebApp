@@ -123,7 +123,7 @@ Page({
     this.setData({
       channel: event.currentTarget.dataset.value
     })
-    this.getList(1, true, event.currentTarget.dataset.value)
+    this.getList(1, true, event.currentTarget.dataset.value,this.data.newUrl)
   },
   onReachBottom: function () {
     var done = this.data.done;
@@ -157,6 +157,13 @@ Page({
       success: function (res) {
         console.log(res)// success
       }
+    })
+  },
+  handleDetail:function(event){
+    var id = event.currentTarget.dataset.id
+    console.log(id)
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${id}`
     })
   }
 })

@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/detail/detail",
     "pages/index/index",
     "pages/post/post",
     "pages/editUser/editUser",
@@ -9,7 +10,7 @@
     "pages/user/user",
     "pages/favorites/favorites",
     "pages/hobbies/hobbies",
-    "pages/poster/poster",
+    
     "pages/releaseVideo/releaseVideo",
     "pages/flop/flop",
     "pages/news/news",

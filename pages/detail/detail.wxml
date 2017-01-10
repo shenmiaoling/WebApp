@@ -1,0 +1,37 @@
+
+<!--pages/detail/detail.wxml-->
+<view>
+  <video src="{{videoDetail.video_url.vid_url}}" style="width:100%"></video>
+  <view class="video-title">{{videoDetail.title}}</view>
+  <view class="video-bottom" bindtap="test">
+    <image src="/images/eye.png" class="eye"></image>
+    <span class="watch-count">{{videoDetail.view_number}}</span> 
+    <view class="right">
+      <view class="unlike {{item.like ? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="clickFavorite"></view>
+      <span class="like-count">{{videoDetail.like_number}}</span> 
+      <image src="/images/conment.png" class="conment"></image>
+      <span class="conment-count">{{videoDetail.comment_number}}</span> 
+    </view>
+  </view>
+  <view class="video-owner">
+    <image src="{{videoDetail.poster.head_pic}}" class="avatar"></image>
+    <view class="user-name">{{videoDetail.poster.nickname}}</view>
+    <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
+    <view class="followed" data-id="{{videoDetail.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==videoDetail.poster._id ? false : true}}">√ 已关注</view>
+  </view>
+  <view class="comment-container">
+    <input placeholder="写下你的评论，去盖楼！" class='comment' bindinput="bindinput" />
+    <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="handlePost" size="mini">发送</button>
+  </view>
+  <view class='comment-list'>
+    <view class="hot-comment">热门评论</view>
+    <view class="comment-lists" wx:for="{{commentList}}" wx:key="{{index}}">
+      <image src="{{videoDetail.poster.head_pic}}" class="avatar"></image>
+      <view class='comment-detail'>
+        <view class="poster-name">{{videoDetail.poster.nickname}}</view>
+        <view class="comment-content">{{item.remark}}</view>
+        <view class="comment-time">{{item.remark_time}}</view>
+      </view>
+    </view>
+  </view>
+</view>

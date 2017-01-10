@@ -86,7 +86,9 @@ Page({
       method: 'PATCH',
       success: function (res) {
         // console.log(res)
-        wx.navigateBack()
+        wx.switchTab({
+          url: '/pages/user/user'
+        })
       }
     })
     this.postAvatar()
@@ -101,7 +103,7 @@ Page({
       success: function (res) {
         console.log(res)
       },
-      fail: function(err){
+      fail: function (err) {
         console.log(err)
       }
     })
