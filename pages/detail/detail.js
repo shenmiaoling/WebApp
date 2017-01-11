@@ -5,7 +5,8 @@ Page({
     videoDetail: {},
     postBtn: false,
     remark: '',
-    commentList:[]
+    commentList: [],
+    commenter: []
   },
   onLoad: function (options) {
     console.log(options.id)
@@ -20,12 +21,32 @@ Page({
       success: function (res) {
         that.setData({
           videoDetail: res.data,
-          commentList: res.data.comments.map((item)=>{
-            item.remark_time = item.remark_time.substr(0,10)
+          commentList: res.data.comments.map((item) => {
+            wx.request({
+              url: api.api + `/video/comment/${item._id}`,
+              method: 'GET',
+              success: function (res) {
+                that.setData({
+                  commenter:res.data.commenter
+                })
+              }
+            })
+            item.commenter = that.data.commenter,
+            item.remark_time = item.remark_time.substr(0, 10)
             return item
           })
         })
-        console.log(res)
+        console.log(that.data.commentList)
+      }
+    })
+  },
+  getCommenter: function (cid) {
+    var that = this
+    wx.request({
+      url: api.api + `/video/comment/${cid}`,
+      method: 'GET',
+      success: function (res) {
+        that.data.commenter.push(res)
       }
     })
   },
