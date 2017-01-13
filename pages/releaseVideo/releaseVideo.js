@@ -13,12 +13,15 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function (res) {
-        console.log('hhhh')
         console.log(res)
         _this.setData({
           userInfo: res.data
         })
-        // success
+        if(res.data.pub_videos.length !== 0){
+          _this.setData({
+            hidden : true
+          })
+        }
       }
     })
   },

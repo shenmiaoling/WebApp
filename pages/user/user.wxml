@@ -2,7 +2,7 @@
   <view  bindtap="bindViewTap" class="userinfo">
     <image class="blur-image" src="{{userInfo.head_pic}}" ></image>
     <image class="userinfo-avatar" src="{{userInfo.head_pic}}" background-size="cover" bindtap="handleEdit"></image>
-    <text class="userinfo-nickname">{{userInfo.nickname}}</text>
+    <text class="userinfo-nickname">{{signature}}</text>
   </view>
   <view class="Row">
       <view class="Column" bindtap="releasedVideo">0</view>

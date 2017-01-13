@@ -20,15 +20,15 @@
     <view class="followed" data-id="{{videoDetail.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==videoDetail.poster._id ? false : true}}">√ 已关注</view>
   </view>
   <view class="comment-container">
-    <input placeholder="写下你的评论，去盖楼！" class='comment' bindinput="bindinput" />
-    <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="handlePost" size="mini">发送</button>
+    <input placeholder="写下你的评论，去盖楼！" class='comment' bindinput="bindinput" bindconfirm="handlePost"/>
+    <button class="post-btn {{postBtn ? 'color' : 'post-btn'}}" bindtap="handlePost" size="mini" >发送</button>
   </view>
   <view class='comment-list'>
     <view class="hot-comment">热门评论</view>
     <view class="comment-lists" wx:for="{{commentList}}" wx:key="{{index}}">
       <image src="{{item.commenter.head_pic}}" class="avatar"></image>
       <view class='comment-detail'>
-        <view class="poster-name">{{item.commenter}}</view>
+        <view class="poster-name">{{item.commenter.nickname}}</view>
         <view class="comment-content">{{item.remark}}</view>
         <view class="comment-time">{{item.remark_time}}</view>
       </view>

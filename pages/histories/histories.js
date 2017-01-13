@@ -34,7 +34,7 @@ Page({
             data: {},
             method: 'DELETE',
             success: function(res){
-              console.log(res)
+              // console.log(res)
               that.setData({
                 listLi:[]
               })

@@ -6,11 +6,11 @@ Page({
     postBtn: false,
     remark: '',
     commentList: [],
-    commenter: []
+    commenter: [{a:1},{b:2},{c:3}]
   },
   onLoad: function (options) {
-    console.log(options.id)
-    this.getVideo('5870c49f493b655769dfc223')
+    // console.log(options.id)
+    this.getVideo(options.id)
   },
   getVideo(id) {
     var that = this
@@ -22,21 +22,11 @@ Page({
         that.setData({
           videoDetail: res.data,
           commentList: res.data.comments.map((item) => {
-            wx.request({
-              url: api.api + `/video/comment/${item._id}`,
-              method: 'GET',
-              success: function (res) {
-                that.setData({
-                  commenter:res.data.commenter
-                })
-              }
-            })
-            item.commenter = that.data.commenter,
+            console.log(item.commenter)
             item.remark_time = item.remark_time.substr(0, 10)
             return item
           })
         })
-        console.log(that.data.commentList)
       }
     })
   },

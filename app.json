@@ -1,5 +1,8 @@
 {
   "pages": [
+    "pages/histories/histories",
+    "pages/releaseVideo/releaseVideo",
+    "pages/user/user",
     "pages/index/index",
     "pages/detail/detail",
     
@@ -7,12 +10,10 @@
     "pages/editUser/editUser",
     "pages/fans/fans",
     "pages/follow/follow",
-    "pages/histories/histories",
-    "pages/user/user",
+    
     "pages/favorites/favorites",
     "pages/hobbies/hobbies",
     
-    "pages/releaseVideo/releaseVideo",
     "pages/flop/flop",
     "pages/news/news",
     "pages/logs/logs"

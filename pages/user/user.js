@@ -4,7 +4,8 @@ var app = getApp()
 
 Page({
   data: {
-    userInfo: {}
+    userInfo:{},
+    signature:"头牌不问出处"
   },
   handleEdit: function () {
     wx.navigateTo({
@@ -19,7 +20,6 @@ Page({
           var code = res.code;
           wx.getUserInfo({
             success: function (res2) {
-              console.log(res2)
               var encryptedData = res2.encryptedData
               var iv = res2.iv
               wx.request({
@@ -31,7 +31,6 @@ Page({
                 },
                 method: 'GET',
                 success: function (res) {
-                  console.log(res)// success
                   wx.setStorageSync('token', res.data.token)
                   _this.getToken(res.data.token)
                 }
@@ -52,10 +51,9 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
      
       success: function (res) {
-        console.log('hhhh')
-        console.log(res)
         _this.setData({
-          userInfo: res.data
+          userInfo: res.data,
+          signature: res.data.signature
         })
         // success
       }
@@ -99,7 +97,6 @@ Page({
           var code = res.code;
           wx.getUserInfo({
             success: function (res2) {
-              console.log(res2)
               var encryptedData = res2.encryptedData
               var iv = res2.iv
               wx.request({
@@ -111,7 +108,6 @@ Page({
                 },
                 method: 'GET',
                 success: function (res) {
-                  console.log(res)// success
                   wx.setStorageSync('token', res.data.token)
                   _this.getToken(res.data.token)
                 }

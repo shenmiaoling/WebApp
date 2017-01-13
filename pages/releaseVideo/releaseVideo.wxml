@@ -9,10 +9,10 @@
 <view class="release-title">发布视频
   <text class="public-count"> {{userInfo.pub_videos.length}}</text>
 </view>
-<view class="no-pub">
+<view class="no-pub" hidden="{{hidden ? true : false}}">
     <view class="sad-emoji">(︶︹︺)</view>
     <view class="tip-text">还没有发布过任何视频</view>
     <view class="tip-text">发视频，当头牌
-    <button class="pub-video">立即关注头牌红人</button>
+    <button class="pub-video">立即发布视频</button>
     </view>
 </view>
