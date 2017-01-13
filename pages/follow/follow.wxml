@@ -1,5 +1,13 @@
 <!--pages/follow/follow.wxml-->
-<view class="no-pub" hidden="true">
+<view class="no-pub" hidden = "{{follow ? true : false}}">
     <view class="sad-emoji">(︶︹︺)</view>
     <view class="tip-text">还没有关注任何人</view>
+</view>
+<view class="follow" hidden = "{{follow ? false : true}}">
+<view class="video-owner">
+        <image src="{{item.poster.head_pic}}" class="avatar"></image>
+        <view class="user-name">{{item.poster.nickname}}</view>
+        <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
+        <view class="followed" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? false : true}}">√ 已关注</view>
+      </view>
 </view>

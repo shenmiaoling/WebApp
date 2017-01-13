@@ -82,3 +82,26 @@
     margin-top: 10px;
     margin-bottom: 50px
 }
+.poster {
+  margin: 15px;
+}
+
+.poster-cover {
+  max-width: 40%;
+  max-height: 74px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.video-title {
+  display: inline-block;
+  width: 50%;
+  margin-left: 5px;
+  font-size: 15px;
+  vertical-align: middle;
+  line-height: 25px;
+}
+.eye{
+    width:15px;
+    height: 15px;
+}

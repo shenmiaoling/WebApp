@@ -12,7 +12,8 @@ Page({
       url: '../editUser/editUser'
     })
   },
-  onLoad: function () {
+  onShow: function () {
+    console.log("onload啊啊啊啊")
     var _this = this
     wx.login({
       success: function (res) {
@@ -51,6 +52,7 @@ Page({
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
      
       success: function (res) {
+        console.log(res.data)
         _this.setData({
           userInfo: res.data,
           signature: res.data.signature
@@ -121,9 +123,9 @@ Page({
       }
     })
   },
-  onShow: function () {
-    // 页面显示
-  },
+  // onShow: function () {
+  //   // 页面显示
+  // },
   onHide: function () {
     // 页面隐藏
   },

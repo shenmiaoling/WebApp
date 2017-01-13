@@ -89,7 +89,7 @@ Page({
         wx.navigateBack({
           delta: 1, // 回退前 delta(默认为1) 页面
           success: function(res){
-            // success
+            console.log(res)// success
           }
         })
       }
@@ -98,12 +98,12 @@ Page({
   },
   postAvatar: function () {
     var token = wx.getStorageSync('token')
-    console.log(token)
     wx.uploadFile({
       url: api.api + `/user/headimg/r?token=${token}`,
       filePath: this.data.avatar[0],
-      name: 'headimg',
+      name: "headimg",
       success: function (res) {
+        console.log("upload")
         console.log(res)
       },
       fail: function (err) {

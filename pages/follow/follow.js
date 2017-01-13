@@ -1,19 +1,39 @@
 // pages/follow/follow.js
+var api = require("../../utils/api.js")
 Page({
-  data:{},
-  onLoad:function(options){
-    // 页面初始化 options为页面跳转所带来的参数
+  data: {},
+  onLoad: function (options) {
+    this.getUserInfo()
   },
-  onReady:function(){
-    wx.setNavigationBarTitle({  title: '我的关注'})
+  getUserInfo: function (token) {
+    var _this = this
+    var token = wx.getStorageSync('token')
+    wx.request({
+      url: api.api + `/user/info?token=${token}`,
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      success: function (res) {
+        console.log(res.data)
+        if (res.data.follows.length !== 0) {
+          _this.setData({
+            userInfo: res.data,
+            signature: res.data.signature,
+            follow: true
+          })
+        }
+        // success
+      }
+    })
   },
-  onShow:function(){
+  onReady: function () {
+    wx.setNavigationBarTitle({ title: '我的关注' })
+  },
+  onShow: function () {
     // 页面显示
   },
-  onHide:function(){
+  onHide: function () {
     // 页面隐藏
   },
-  onUnload:function(){
+  onUnload: function () {
     // 页面关闭
   }
 })
