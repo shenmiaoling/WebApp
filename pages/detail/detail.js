@@ -6,7 +6,7 @@ Page({
     postBtn: false,
     remark: '',
     commentList: [],
-    commenter: []
+    commenter: {}
   },
   onLoad: function (options) {
     console.log(options.id)
@@ -29,9 +29,12 @@ Page({
                 that.setData({
                   commenter:res.data.commenter
                 })
+                console.log(that.data.commenter)
+                //  item.commenter=res.data.commenter
               }
             })
-            item.commenter = that.data.commenter,
+            console.log(this.data.commenter)
+            // item.commenter = { id: "7" }
             item.remark_time = item.remark_time.substr(0, 10)
             return item
           })

@@ -86,8 +86,11 @@ Page({
       method: 'PATCH',
       success: function (res) {
         // console.log(res)
-        wx.switchTab({
-          url: '/pages/user/user'
+        wx.navigateBack({
+          delta: 1, // 回退前 delta(默认为1) 页面
+          success: function(res){
+            // success
+          }
         })
       }
     })
