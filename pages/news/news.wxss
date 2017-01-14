@@ -1,6 +1,11 @@
 /* pages/news/news.wxss */
 .news{
     padding: 10px;
+    
+}
+.list{
+  display: inline-block;
+  /*vertical-align: middle;*/
 }
 .avatar {
   width: 37px;
@@ -8,4 +13,13 @@
   border-radius: 50%;
   margin-left: 4px;
   margin-right: 12px;
+  vertical-align: middle;
+}
+.text{
+  display: inline-block;
+}
+.time{
+  display: inline-block;
+  margin-left: 50px;
+  color: #ddd;
 }

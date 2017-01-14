@@ -2,6 +2,7 @@
 <view class="news">
     <view class="list">
      <image src="/images/camera.png" class="avatar"></image>
-     <view></view>
+     <view class="text">有人赞了你的视频</view>
+     <view class="time">20170102</view>
     </view>
 </view>

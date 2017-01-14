@@ -4,6 +4,23 @@ Page({
   onLoad:function(options){
     
   },
+  getNews:function(){
+    wx.request({
+      url: 'https://URL',
+      data: {},
+      method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
+      // header: {}, // 设置请求的 header
+      success: function(res){
+        // success
+      },
+      fail: function() {
+        // fail
+      },
+      complete: function() {
+        // complete
+      }
+    })
+  },
   onReady:function(){
     wx.setNavigationBarTitle({  title: '消息通知'})
   },
