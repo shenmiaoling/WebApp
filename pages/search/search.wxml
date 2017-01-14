@@ -1,5 +1,32 @@
+
 <!--pages/search/search.wxml-->
-  <view class="section" bindtap="handleSearch">
-    <input type="text" class="search" placeholder="搜索视频或用户" bindinput="handleSearch"/> 
-    <text class="search-text">搜索</text>
+<view class="section" bindtap="handleSearch">
+  <input type="text" class="search" placeholder="搜索视频或用户" bindinput="handleSearch" />
+  <text class="search-text" bindtap="handleSubmit">搜索</text>
+</view>
+<view class="result">
+  <view class="user-title" hidden="{{user.length == 0 || search? true : false}}">头牌</view>
+  <view class="content">
+    <view class="user" wx:for="{{user}}" wx:key="{{index}}">
+      <view class="user-content">
+        <image src="{{item.head_pic}}" class="avatar"></image>
+        <view class="user-name">{{item.nickname}}</view>
+      </view>
     </view>
+  </view>
+  <view class="title" hidden="{{video.length == 0 || search ? true : false}}">视频</view>
+  <view class="poster" wx:for="{{video}}" wx:key="{{index}}">
+    <view bindtap="handleDetail" data-id="{{item._id}}">
+      <image src="{{item.cover.cover_url}}" class="poster-cover"></image>
+      <view class="video-title">{{item.title}}
+        <view class="history">
+          <image src="/images/eye.png" class="eye"></image>
+          <text> {{item.view_number}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+<view class="without" hidden="{{video.length == 0 && user.length == 0 ? false : true}}">
+  暂无相关结果，换个词试试吧~
+</view>

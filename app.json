@@ -1,8 +1,9 @@
 {
   "pages": [
-    
-    "pages/search/search",
+    "pages/news/news",
+    "pages/flop/flop",
     "pages/index/index",
+    "pages/search/search",
     "pages/fans/fans",
     "pages/follow/follow",
     "pages/user/user",
@@ -14,8 +15,8 @@
     "pages/editUser/editUser",
     "pages/favorites/favorites",
     "pages/hobbies/hobbies",
-    "pages/flop/flop",
-    "pages/news/news",
+    
+    
     "pages/logs/logs"
   ],
   "window": {

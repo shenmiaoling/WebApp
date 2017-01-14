@@ -1,8 +1,11 @@
 /* pages/news/news.wxss */
-.news-title {
-    font-size: 24px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: center;
-    border-bottom: 1px solid #d8d8d8;
+.news{
+    padding: 10px;
+}
+.avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 50%;
+  margin-left: 4px;
+  margin-right: 12px;
 }
