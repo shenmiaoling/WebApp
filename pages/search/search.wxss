@@ -1,0 +1,19 @@
+/* pages/search/search.wxss */
+.section {
+position: relative;
+}
+
+.search {
+  margin-left: 30rpx;
+  margin-bottom: 34rpx;
+  width: 65%;
+  border: gray solid 1px;
+  border-radius: 50rpx;
+  padding: 0 50rpx;
+  font-size: 30rpx;
+}
+.search-text{
+    position: absolute;
+    top: 10rpx;
+    right: 20rpx;
+}

@@ -1,5 +1,5 @@
 // pages/fans/fans.js
-var api = require("../utils/api.js")
+var api = require("../../utils/api.js")
 Page({
   data: {},
   onLoad: function (options) {
@@ -14,17 +14,17 @@ Page({
       url: '/pages/post/post'
     })
   },
-   getFans: function (token) {
+ getFans: function () {
     var _this = this
     var token = wx.getStorageSync('token')
     wx.request({
-      url: api.api + `/user/follows?token=${token}`,
+      url: api.api + `/user/fans?token=${token}`,
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       success: function (res) {
         console.log(res.data)
         if (res.data.fans.length !== 0) {
           _this.setData({
-            userInfo: res.data,
+            userInfo: res.data.fans,
             fans: true
           })
         }

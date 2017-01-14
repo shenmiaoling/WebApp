@@ -36,8 +36,8 @@
     </view>
   </view>
   <view class="shadow" hidden="{{pull ? false : true}}" bindtap="pullLabel"></view>
-  <view class="section">
-    <input type="text" class="search" placeholder="大家都在搜：" /> </view>
+  <view class="section" bindtap="handleSearch">
+    <input type="text" class="search" placeholder="搜索视频或用户" /> </view>
   <view class="tc">
     <template is="video-model" data="{{listLi}}" />
   </view>

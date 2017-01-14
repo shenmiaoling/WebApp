@@ -1,5 +1,5 @@
 <!--pages/fans/fans.wxml-->
-<view class="no-pub" hidden = "{{fans ? false : true}}">
+<view class="no-pub" hidden = "{{fans ? true : false}}">
     <view class="sad-emoji">(︶︹︺)</view>
     <view class="tip-text">还没有粉丝呢</view>
     <view class="tip-text">发视频才会有人关注你哦
@@ -7,9 +7,9 @@
     </view>
 </view>
 <view class="follow" hidden = "{{fans ? false : true}}">
-<view class="video-owner">
-        <image src="{{item.poster.head_pic}}" class="avatar"></image>
-        <view class="user-name">{{item.poster.nickname}}</view>
+<view class="video-owner" wx:for="{{userInfo}}" wx:key="{{index}}">
+        <image src="{{item.head_pic}}" class="avatar"></image>
+        <view class="user-name">{{item.nickname}}</view>
         <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
         <view class="followed" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? false : true}}">√ 已关注</view>
       </view>

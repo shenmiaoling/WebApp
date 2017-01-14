@@ -161,9 +161,13 @@ Page({
   },
   handleDetail:function(event){
     var id = event.currentTarget.dataset.id
-    console.log(id)
     wx.navigateTo({
       url: `/pages/detail/detail?id=${id}`
+    })
+  },
+  handleSearch:function(){
+    wx.navigateTo({
+      url: `/pages/search/search`
     })
   }
 })

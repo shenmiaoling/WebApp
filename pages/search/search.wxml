@@ -1,0 +1,5 @@
+<!--pages/search/search.wxml-->
+  <view class="section" bindtap="handleSearch">
+    <input type="text" class="search" placeholder="搜索视频或用户" bindinput="handleSearch"/> 
+    <text class="search-text">搜索</text>
+    </view>
