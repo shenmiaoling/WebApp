@@ -14,7 +14,7 @@
     </view>
   </view>
   <view class="video-owner">
-    <image src="{{videoDetail.poster.head_pic}}" class="avatar"></image>
+    <image src="{{videoDetail.poster.head_pic}}" class="avatar" bindtap="handleProfile" data-id = "{{videoDetail.poster._id}}"></image>
     <view class="user-name">{{videoDetail.poster.nickname}}</view>
     <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
     <view class="followed" data-id="{{videoDetail.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==videoDetail.poster._id ? false : true}}">√ 已关注</view>

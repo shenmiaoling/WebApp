@@ -22,6 +22,12 @@ Page({
       },
     })
   },
+    handleDetail:function(event){
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${id}`
+    })
+  },
   handleFan(event) {
     var that = this
     var poster_id = event.currentTarget.dataset.id

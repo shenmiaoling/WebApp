@@ -6,10 +6,12 @@ Page({
     postBtn: false,
     remark: '',
     commentList: [],
-    commenter: [{a:1},{b:2},{c:3}]
+    id: ""
   },
   onLoad: function (options) {
-    // console.log(options.id)
+    this.setData({
+      id: options.id
+    })
     this.getVideo(options.id)
   },
   getVideo(id) {
@@ -19,24 +21,14 @@ Page({
       data: {},
       method: 'GET',
       success: function (res) {
+        console.log(res)
         that.setData({
           videoDetail: res.data,
           commentList: res.data.comments.map((item) => {
-            console.log(item.commenter)
             item.remark_time = item.remark_time.substr(0, 10)
             return item
           })
         })
-      }
-    })
-  },
-  getCommenter: function (cid) {
-    var that = this
-    wx.request({
-      url: api.api + `/video/comment/${cid}`,
-      method: 'GET',
-      success: function (res) {
-        that.data.commenter.push(res)
       }
     })
   },
@@ -56,6 +48,7 @@ Page({
     }
   },
   handlePost: function () {
+    var that = this
     var token = wx.getStorageSync('token')
     if (this.data.postBtn) {
       wx.request({
@@ -69,15 +62,21 @@ Page({
             icon: 'success',
             duration: 2000
           })
+          that.getVideo(that.data.id)
         },
         fail: function () {
           // fail
         },
         complete: function () {
-          // complete
         }
       })
     }
+  },
+  handleProfile: function (event) {
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/profile/profile?id=${id}`
+    })
   },
   onReady: function () {
     // 页面渲染完成

@@ -1,23 +1,21 @@
 {
   "pages": [
+    
+    "pages/index/index",
+    "pages/profile/profile",
+    "pages/detail/detail",
     "pages/news/news",
     "pages/flop/flop",
-    "pages/index/index",
+    "pages/editUser/editUser",
     "pages/search/search",
     "pages/fans/fans",
     "pages/follow/follow",
     "pages/user/user",
     "pages/releaseVideo/releaseVideo",
-    
     "pages/histories/histories",
-    "pages/detail/detail",
     "pages/post/post",
-    "pages/editUser/editUser",
     "pages/favorites/favorites",
-    "pages/hobbies/hobbies",
-    
-    
-    "pages/logs/logs"
+    "pages/hobbies/hobbies"
   ],
   "window": {
     "backgroundTextStyle": "light",

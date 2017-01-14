@@ -15,6 +15,7 @@ Page({
       maxDuration: 10, // 拍摄视频最长拍摄时间，单位秒。最长支持60秒
       camera: ['front', 'back'],
       success: function (res) {
+        console.log(res.tempFilePath)
         that.setData({
           videoPath: res.tempFilePath,
           video: true

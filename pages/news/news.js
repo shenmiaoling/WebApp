@@ -1,23 +1,42 @@
 // pages/news/news.js
+var api = require("../../utils/api.js")
 Page({
-  data:{},
+  data:{
+    newsList:[],
+    news:""
+  },
   onLoad:function(options){
-    
+    this.getNews()
   },
   getNews:function(){
+    var token = wx.getStorageSync('token')
+    var that = this
     wx.request({
-      url: 'https://URL',
+      url: api.api + `/user/message?token=${token}`,
       data: {},
       method: 'GET', // OPTIONS, GET, HEAD, POST, PUT, DELETE, TRACE, CONNECT
       // header: {}, // 设置请求的 header
       success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
+        console.log(res)// success
+        if(res.data.kind=="1"){
+          that.setData({
+            news:"关注了你"
+          })
+        }else if(res.data.kind=="2"){
+          that.setData({
+            news:"赞了你的视频"
+          })
+        }else{
+          that.setData({
+            news:"评论了你的视频"
+          })
+        }
+        that.setData({
+          newsList: res.data.map((item) => {
+            item.createTime = item.createTime.substr(0, 10)
+            return item
+          })
+        })
       }
     })
   },

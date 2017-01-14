@@ -50,6 +50,12 @@ Page({
       }
     })
   },
+  handleDetail:function(event){
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/detail/detail?id=${id}`
+    })
+  },
   onReady: function () {
     wx.setNavigationBarTitle({ title: '播放历史' })
   }

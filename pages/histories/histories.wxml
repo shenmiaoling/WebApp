@@ -1,11 +1,14 @@
+
 <!--pages/histories/histories.wxml-->
 <view class="clear" bindtap="handleClear">清除</view>
 <view class="poster" wx:for="{{listLi}}" wx:key="{{index}}">
-  <image src="{{item.videoId.cover.cover_url}}" class="poster-cover"></image>
-  <view class="video-title">{{item.videoId.title}}
-    <view class="history">
-      <image src="/images/eye.png" class="eye"></image>
-      <text> {{item.videoId.view_number}}</text>
+  <view bindtap="handleDetail" data-id="{{item._id}}">
+    <image src="{{item.videoId.cover.cover_url}}" class="poster-cover"></image>
+    <view class="video-title">{{item.videoId.title}}
+      <view class="history">
+        <image src="/images/eye.png" class="eye"></image>
+        <text> {{item.videoId.view_number}}</text>
+      </view>
     </view>
   </view>
 </view>

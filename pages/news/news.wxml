@@ -1,8 +1,8 @@
 <!--pages/news/news.wxml-->
 <view class="news">
-    <view class="list">
-     <image src="/images/camera.png" class="avatar"></image>
-     <view class="text">有人赞了你的视频</view>
-     <view class="time">20170102</view>
+    <view class="list" wx:for="{{newsList}}" wx:key="{{index}}">
+     <image src="{{item.anotherId.head_pic}}" class="avatar"></image>
+     <view class="text">{{item.anotherId.nickname}}{{news}}</view>
+     <view class="time">{{item.createTime}}</view>
     </view>
 </view>

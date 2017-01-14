@@ -1,12 +1,16 @@
 /* pages/news/news.wxss */
-.news{
-    padding: 10px;
-    
+
+.news {
+  padding: 10px;
 }
-.list{
+
+.list {
   display: inline-block;
-  /*vertical-align: middle;*/
+  border-bottom: 1px solid #ddd;
+  width: 100%;
+  padding: 10px;
 }
+
 .avatar {
   width: 37px;
   height: 37px;
@@ -15,11 +19,15 @@
   margin-right: 12px;
   vertical-align: middle;
 }
-.text{
+
+.text {
   display: inline-block;
+  font-size: 14px;
 }
-.time{
+
+.time {
   display: inline-block;
   margin-left: 50px;
   color: #ddd;
+  font-size: 12px;
 }

@@ -26,5 +26,5 @@
 </view>
 <view class="content-list">
   <text class="avatar-text">签名</text>
-  <input name="signature" class="name" value="头牌不问出处" bindinput="bindSignature"/>
+  <input name="signature" class="name" value="{{userInfo.signature}}" bindinput="bindSignature"/>
 </view>
