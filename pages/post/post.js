@@ -8,14 +8,13 @@ Page({
     title: '',
     channel: 'hot'
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     var that = this
     wx.chooseVideo({
       sourceType: ['album', 'camera'], // album 从相册选视频，camera 使用相机拍摄
       maxDuration: 10, // 拍摄视频最长拍摄时间，单位秒。最长支持60秒
       camera: ['front', 'back'],
       success: function (res) {
-        console.log(res.tempFilePath)
         that.setData({
           videoPath: res.tempFilePath,
           video: true
