@@ -14,7 +14,7 @@ Page({
       url: '/pages/post/post'
     })
   },
- getFans: function () {
+  getFans: function () {
     var _this = this
     var token = wx.getStorageSync('token')
     wx.request({
@@ -30,6 +30,12 @@ Page({
         }
         // success
       }
+    })
+  },
+  handleProfile: function (event) {
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/profile/profile?id=${id}`
     })
   },
   onShow: function () {

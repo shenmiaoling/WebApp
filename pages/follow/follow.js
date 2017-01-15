@@ -16,12 +16,17 @@ Page({
         if (res.data.follows.length !== 0) {
           _this.setData({
             userInfo: res.data.follows,
-            signature: res.data.signature,
             follow: true
           })
         }
         // success
       }
+    })
+  },
+  handleProfile: function (event) {
+    var id = event.currentTarget.dataset.id
+    wx.navigateTo({
+      url: `/pages/profile/profile?id=${id}`
     })
   },
   onReady: function () {

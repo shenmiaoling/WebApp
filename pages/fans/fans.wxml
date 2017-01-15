@@ -8,7 +8,7 @@
 </view>
 <view class="follow" hidden = "{{fans ? false : true}}">
 <view class="video-owner" wx:for="{{userInfo}}" wx:key="{{index}}">
-        <image src="{{item.head_pic}}" class="avatar"></image>
+        <image src="{{item.head_pic}}" class="avatar" bindtap="handleProfile" data-id = "{{item._id}}"></image>
         <view class="user-name">{{item.nickname}}</view>
         <view class="add-follow" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? true : false}}">+ 关注</view>
         <view class="followed" data-id="{{item.poster._id}}" bindtap="handleFan" hidden="{{fan && poster_id==item.poster._id ? false : true}}">√ 已关注</view>
