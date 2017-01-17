@@ -13,7 +13,6 @@ Page({
     })
   },
   onShow: function () {
-    console.log("onload啊啊啊啊")
     var _this = this
     wx.login({
       success: function (res) {

@@ -8,6 +8,22 @@ Page({
 
   onLoad: function (e) {
     this.getList(1)
+    this.getLike()
+  },
+  getLike: function () {
+    var token = wx.getStorageSync('token')
+    var that = this
+    wx.request({
+      url: api.api + `/user/favorite/get?&token=${token}`,
+      method: 'GET',
+      success: function (res) {
+        that.setData({
+          favorites: res.data.favorites.map((v) => {
+            return v._id
+          })
+        })
+      },
+    })
   },
   getList: function (page, stopPull) {
     var that = this
@@ -17,12 +33,14 @@ Page({
       success: function (res) {
         console.log(res)
         that.setData({
-          listLi: res.data,
+          listLi: res.data.map((v) => {
+              return Object.assign(v, { like: that.data.favorites.includes(v._id) })
+            })
         })
       },
     })
   },
-    handleDetail:function(event){
+  handleDetail: function (event) {
     var id = event.currentTarget.dataset.id
     wx.navigateTo({
       url: `/pages/detail/detail?id=${id}`

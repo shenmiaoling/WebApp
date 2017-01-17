@@ -19,7 +19,7 @@
           <image src="/images/eye.png" class="eye"></image>
           <span class="watch-count">{{item.view_number}}</span> 
           <view class="right">
-            <view class="unlike {{like && vid==item._id? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="clickFavorite"></view>
+            <view class="unlike {{item.like ? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="clickFavorite"></view>
             <span class="like-count">{{item.like_number}}</span> 
             <image src="/images/conment.png" class="conment"></image>
             <span class="conment-count">{{item.comment_number}}</span> 

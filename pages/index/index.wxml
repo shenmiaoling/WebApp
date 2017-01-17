@@ -44,23 +44,24 @@
 </view>
 <template name="video-model">
   <view wx:for="{{listLi}}" wx:key="{{index}}">
-    <video src="{{item.video_url.vid_url}}" controls style="width:100%;height: 175px" data-id="{{item._id}}" bindplay="handleHistory" poster="{{item.cover.cover_url}}"></video>
+    <video id="myVideo" src="{{item.video_url.vid_url}}" controls style="width:100%;height: 175px" data-id="{{item._id}}" bindplay="handleHistory" poster="{{item.cover.cover_url}}" play="false"></video>
     <view bindtap="handleDetail" data-id="{{item._id}}">
-      <image src="{{item.poster.head_pic}}" class="avatar" bindtap="handlePoster"></image>
+      <image src="{{item.poster.head_pic}}" class="avatar"></image>
       <view class="user-name">{{item.poster.nickname}}</view>
       <view class="video-title">
         {{item.title}}
       </view>
+      </view>
       <view class="video-bottom">
-        <image src="/images/eye.png" class="eye"></image>
-        <span class="watch-count">{{item.view_number}}</span> 
+        <image src="/images/eye.png" class="eye" bindtap="handleDetail" data-id="{{item._id}}"></image>
+        <span class="watch-count" bindtap="handleDetail" data-id="{{item._id}}">{{item.view_number}}</span> 
         <view class="right">
-          <view class="unlike {{item.like ? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="clickFavorite"></view>
+          <view class="unlike {{item.like ? 'like' : 'unlike'}}" data-id="{{item._id}}" bindtap="handleFavorite"></view>
           <span class="like-count">{{item.like_number}}</span> 
-          <image src="/images/conment.png" class="conment"></image>
-          <span class="conment-count">{{item.comment_number}}</span> 
+          <image src="/images/conment.png" class="conment" bindtap="handleDetail" data-id="{{item._id}}"></image>
+          <span class="conment-count" bindtap="handleDetail" data-id="{{item._id}}">{{item.comment_number}}</span> 
         </view>
       </view>
-    </view>
+    
   </view>
 </template>
